@@ -1,5 +1,4 @@
 ui<-fluidPage(
-  # h2(BackstoryText1,align="center"),
   
   tags$style("@import url(https://use.fontawesome.com/releases/v6.1.1/css/all.css);",
              HTML(".fa{font-size: 80px; color:#FF8200; align-middle}"),
@@ -23,7 +22,7 @@ ui<-fluidPage(
       column(
         width = 6,
         align = "left",
-        actionButton("run1b","", class = "btn-link btn-lg",icon = icon("mortar-pestle"))
+        actionButton("run1b","", class = "btn-link btn-lg",icon = icon("mortar-pestle",verify_fa = FALSE))
       )
     ),
     br(),
@@ -35,7 +34,7 @@ ui<-fluidPage(
       column(
         width = 6,
         align = "left",
-        actionButton("run2b","", class = "btn-link btn-lg",icon = icon("sack-dollar"))
+        actionButton("run2b","", class = "btn-link btn-lg",icon = icon("sack-dollar",verify_fa = FALSE))
       )
     ),
     br(),
@@ -47,7 +46,7 @@ ui<-fluidPage(
       column(
         width = 6,
         align = "left",
-        actionButton("run3b","", class = "btn-link btn-lg",icon = icon("horse"))
+        actionButton("run3b","", class = "btn-link btn-lg",icon = icon("horse",verify_fa = FALSE))
       )
     ),
     br(),
@@ -59,7 +58,7 @@ ui<-fluidPage(
       column(
         width = 6,
         align = "left",
-        actionButton("run4b","", class = "btn-link btn-lg",icon = icon("bandage"))
+        actionButton("run4b","", class = "btn-link btn-lg",icon = icon("bandage",verify_fa = FALSE))
       )
     ),
     br(),
@@ -71,7 +70,7 @@ ui<-fluidPage(
       column(
         width = 6,
         align = "left",
-        actionButton("run5b","", class = "btn-link btn-lg",icon = icon("beer-mug-empty"))
+        actionButton("run5b","", class = "btn-link btn-lg",icon = icon("beer-mug-empty",verify_fa = FALSE))
       )
     ),
     br(),
@@ -83,7 +82,7 @@ ui<-fluidPage(
       column(
         width = 6,
         align = "left",
-        actionButton("run6b","", class = "btn-link btn-lg",icon = icon("cash-register"))
+        actionButton("run6b","", class = "btn-link btn-lg",icon = icon("cash-register",verify_fa = FALSE))
       )
     ),
     br(),
@@ -95,7 +94,7 @@ ui<-fluidPage(
       column(
         width = 6,
         align = "left",
-        actionButton("run7b","", class = "btn-link btn-lg",icon = icon("dumbbell"))
+        actionButton("run7b","", class = "btn-link btn-lg",icon = icon("dumbbell",verify_fa = FALSE))
       )
     )
   )
