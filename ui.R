@@ -11,6 +11,10 @@ ui<-fluidPage(
              HTML("#run6{color: green}")
             ),
   
+  
+  ##########################################################################################################################################################################
+  #try throwing all of this to the server and in a renderUi that is contingent on a back button being pressed. Generate each submenu based on the clicking of the icon/word beside it
+  
   mainPanel(
     width = 12,
     fluidRow(
