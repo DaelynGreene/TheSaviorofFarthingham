@@ -1,5 +1,6 @@
 library(shiny)
 library(shinyWidgets)
+library(shiny.router)
 
 BackstoryText1<-"You are journeying from a neighboring kingdom at the urging of your sister's last letter."
 BackstoryText2<-"Before she died, she wrote you, pleading for you to come to Farthingham and overthrow the evil ruler Henry Shelburton."
