@@ -8,8 +8,7 @@ ui<-fluidPage(
              HTML("#run3{color: green}"),
              HTML("#run4{color: green}"),
              HTML("#run5{color: green}"),
-             HTML("#run6{color: green}"),
-             HTML("#run7{color: green}")
+             HTML("#run6{color: green}")
             ),
   
   mainPanel(
@@ -83,18 +82,6 @@ ui<-fluidPage(
         width = 6,
         align = "left",
         actionButton("run6b","", class = "btn-link btn-lg",icon = icon("cash-register",verify_fa = FALSE))
-      )
-    ),
-    br(),
-    fluidRow(
-      column(
-        width = 6,
-        align = "right",
-        actionButton("run7","Trainer", class = "btn-link btn-lg", style="padding:42px;")),
-      column(
-        width = 6,
-        align = "left",
-        actionButton("run7b","", class = "btn-link btn-lg",icon = icon("dumbbell",verify_fa = FALSE))
       )
     )
   )
