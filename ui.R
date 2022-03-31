@@ -14,6 +14,7 @@ ui<-fluidPage(
   
   ##########################################################################################################################################################################
   #try throwing all of this to the server and in a renderUi that is contingent on a back button being pressed. Generate each submenu based on the clicking of the icon/word beside it
+  #when new page is rendered, reset value of clicked actionButton to 0, that may fix the deal with the page updating properly, use adam's if else statement to make it work properly.
   
   mainPanel(
     width = 12,
