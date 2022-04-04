@@ -18,14 +18,14 @@ server <- function(input, output, session) {
   
   output$screen <- renderUI({
     if (ClickCounter1$NumberClicks1 == 0 & ClickCounter2$NumberClicks2 == 0) {
-      div(actionButton('a', 'A'),
-      actionButton('b', 'B'))
+      div(mainPanel(actionButton('a', 'A'),
+      actionButton('b', 'B')))
     } else if (ClickCounter1$NumberClicks1 == 1) {
-      div(h3("Button A was clicked."),
-      actionButton("reset1","Reset"))
+      div(mainPanel(h3("Button A was clicked."),
+      actionButton("reset1","Reset")))
     } else {
-      div(h3("Button B was clicked."),
-      actionButton("reset2","Reset"))
+      div(mainPanel(h3("Button B was clicked."),
+      actionButton("reset2","Reset")))
     }
   })
 }
