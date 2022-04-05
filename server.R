@@ -190,125 +190,6 @@ server <- function(input, output, session) {
     ClickCounter14$NumberClicks14 <- 0
   })
 
-  observeEvent(input$reset8, {
-    ClickCounter1$NumberClicks1 <- 0
-    ClickCounter2$NumberClicks2 <- 0
-    ClickCounter3$NumberClicks3 <- 0
-    ClickCounter4$NumberClicks4 <- 0
-    ClickCounter5$NumberClicks5 <- 0
-    ClickCounter6$NumberClicks6 <- 0
-    ClickCounter7$NumberClicks7 <- 0
-    ClickCounter8$NumberClicks8 <- 0
-    ClickCounter9$NumberClicks9 <- 0
-    ClickCounter10$NumberClicks10 <- 0
-    ClickCounter11$NumberClicks11 <- 0
-    ClickCounter12$NumberClicks12 <- 0
-    ClickCounter13$NumberClicks13 <- 0
-    ClickCounter14$NumberClicks14 <- 0
-  })
-
-  observeEvent(input$reset9, {
-    ClickCounter1$NumberClicks1 <- 0
-    ClickCounter2$NumberClicks2 <- 0
-    ClickCounter3$NumberClicks3 <- 0
-    ClickCounter4$NumberClicks4 <- 0
-    ClickCounter5$NumberClicks5 <- 0
-    ClickCounter6$NumberClicks6 <- 0
-    ClickCounter7$NumberClicks7 <- 0
-    ClickCounter8$NumberClicks8 <- 0
-    ClickCounter9$NumberClicks9 <- 0
-    ClickCounter10$NumberClicks10 <- 0
-    ClickCounter11$NumberClicks11 <- 0
-    ClickCounter12$NumberClicks12 <- 0
-    ClickCounter13$NumberClicks13 <- 0
-    ClickCounter14$NumberClicks14 <- 0
-  })
-
-  observeEvent(input$reset10, {
-    ClickCounter1$NumberClicks1 <- 0
-    ClickCounter2$NumberClicks2 <- 0
-    ClickCounter3$NumberClicks3 <- 0
-    ClickCounter4$NumberClicks4 <- 0
-    ClickCounter5$NumberClicks5 <- 0
-    ClickCounter6$NumberClicks6 <- 0
-    ClickCounter7$NumberClicks7 <- 0
-    ClickCounter8$NumberClicks8 <- 0
-    ClickCounter9$NumberClicks9 <- 0
-    ClickCounter10$NumberClicks10 <- 0
-    ClickCounter11$NumberClicks11 <- 0
-    ClickCounter12$NumberClicks12 <- 0
-    ClickCounter13$NumberClicks13 <- 0
-    ClickCounter14$NumberClicks14 <- 0
-  })
-
-  observeEvent(input$reset11, {
-    ClickCounter1$NumberClicks1 <- 0
-    ClickCounter2$NumberClicks2 <- 0
-    ClickCounter3$NumberClicks3 <- 0
-    ClickCounter4$NumberClicks4 <- 0
-    ClickCounter5$NumberClicks5 <- 0
-    ClickCounter6$NumberClicks6 <- 0
-    ClickCounter7$NumberClicks7 <- 0
-    ClickCounter8$NumberClicks8 <- 0
-    ClickCounter9$NumberClicks9 <- 0
-    ClickCounter10$NumberClicks10 <- 0
-    ClickCounter11$NumberClicks11 <- 0
-    ClickCounter12$NumberClicks12 <- 0
-    ClickCounter13$NumberClicks13 <- 0
-    ClickCounter14$NumberClicks14 <- 0
-  })
-
-  observeEvent(input$reset12, {
-    ClickCounter1$NumberClicks1 <- 0
-    ClickCounter2$NumberClicks2 <- 0
-    ClickCounter3$NumberClicks3 <- 0
-    ClickCounter4$NumberClicks4 <- 0
-    ClickCounter5$NumberClicks5 <- 0
-    ClickCounter6$NumberClicks6 <- 0
-    ClickCounter7$NumberClicks7 <- 0
-    ClickCounter8$NumberClicks8 <- 0
-    ClickCounter9$NumberClicks9 <- 0
-    ClickCounter10$NumberClicks10 <- 0
-    ClickCounter11$NumberClicks11 <- 0
-    ClickCounter12$NumberClicks12 <- 0
-    ClickCounter13$NumberClicks13 <- 0
-    ClickCounter14$NumberClicks14 <- 0
-  })
-
-  observeEvent(input$reset13, {
-    ClickCounter1$NumberClicks1 <- 0
-    ClickCounter2$NumberClicks2 <- 0
-    ClickCounter3$NumberClicks3 <- 0
-    ClickCounter4$NumberClicks4 <- 0
-    ClickCounter5$NumberClicks5 <- 0
-    ClickCounter6$NumberClicks6 <- 0
-    ClickCounter7$NumberClicks7 <- 0
-    ClickCounter8$NumberClicks8 <- 0
-    ClickCounter9$NumberClicks9 <- 0
-    ClickCounter10$NumberClicks10 <- 0
-    ClickCounter11$NumberClicks11 <- 0
-    ClickCounter12$NumberClicks12 <- 0
-    ClickCounter13$NumberClicks13 <- 0
-    ClickCounter14$NumberClicks14 <- 0
-  })
-
-  observeEvent(input$reset14, {
-    ClickCounter1$NumberClicks1 <- 0
-    ClickCounter2$NumberClicks2 <- 0
-    ClickCounter3$NumberClicks3 <- 0
-    ClickCounter4$NumberClicks4 <- 0
-    ClickCounter5$NumberClicks5 <- 0
-    ClickCounter6$NumberClicks6 <- 0
-    ClickCounter7$NumberClicks7 <- 0
-    ClickCounter8$NumberClicks8 <- 0
-    ClickCounter9$NumberClicks9 <- 0
-    ClickCounter10$NumberClicks10 <- 0
-    ClickCounter11$NumberClicks11 <- 0
-    ClickCounter12$NumberClicks12 <- 0
-    ClickCounter13$NumberClicks13 <- 0
-    ClickCounter14$NumberClicks14 <- 0
-  })
-
 
   output$SaviorOfFarthingham <- renderUI({
     if (ClickCounter1$NumberClicks1 == 0 & ClickCounter2$NumberClicks2 == 0 & ClickCounter3$NumberClicks3 == 0 & ClickCounter4$NumberClicks4 == 0 & ClickCounter5$NumberClicks5 == 0 & ClickCounter6$NumberClicks6 == 0 & ClickCounter7$NumberClicks7 == 0 & ClickCounter8$NumberClicks8 == 0 & ClickCounter9$NumberClicks9 == 0 & ClickCounter10$NumberClicks10 == 0 & ClickCounter11$NumberClicks11 == 0 & ClickCounter12$NumberClicks12 == 0 & ClickCounter13$NumberClicks13 == 0 & ClickCounter14$NumberClicks14 == 0) {
@@ -413,32 +294,32 @@ server <- function(input, output, session) {
     } else if (ClickCounter3$NumberClicks3 == 1 | ClickCounter4$NumberClicks4 == 1) {
       div(mainPanel(
         h3("Bank has been clicked."),
-        actionButton("reset3", "Back To Mainpage")
+        actionButton("reset2", "Back To Mainpage")
       ))
     } else if (ClickCounter5$NumberClicks5 == 1 | ClickCounter6$NumberClicks6 == 1) {
       div(mainPanel(
         h3("Ferrier has been clicked."),
-        actionButton("reset5", "Back To Mainpage")
+        actionButton("reset3", "Back To Mainpage")
       ))
     } else if (ClickCounter7$NumberClicks7 == 1 | ClickCounter8$NumberClicks8 == 1) {
       div(mainPanel(
         h3("Healer has been clicked."),
-        actionButton("reset7", "Back To Mainpage")
+        actionButton("reset4", "Back To Mainpage")
       ))
     } else if (ClickCounter9$NumberClicks9 == 1 | ClickCounter10$NumberClicks10 == 1) {
       div(mainPanel(
         h3("Tavern has been clicked."),
-        actionButton("reset9", "Back To Mainpage")
+        actionButton("reset5", "Back To Mainpage")
       ))
     } else if (ClickCounter11$NumberClicks11 == 1 | ClickCounter12$NumberClicks12 == 1) {
       div(mainPanel(
         h3("Trader has been clicked."),
-        actionButton("reset11", "Back To Mainpage")
+        actionButton("reset6", "Back To Mainpage")
       ))
     } else if (ClickCounter13$NumberClicks13 == 1 | ClickCounter14$NumberClicks14 == 1) {
       div(mainPanel(
         h3("Trainer has been clicked."),
-        actionButton("reset13", "Back To Mainpage")
+        actionButton("reset7", "Back To Mainpage")
       ))
     }
   })
