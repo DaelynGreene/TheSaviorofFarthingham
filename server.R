@@ -199,7 +199,7 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("run1", "Alchemist", class = "btn-link btn-lg", style = "padding:42px;")
+            actionButton("run1", "Alchemist", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
@@ -212,7 +212,7 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("run2", "Bank", class = "btn-link btn-lg", style = "padding:42px;")
+            actionButton("run2", "Bank", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
@@ -225,7 +225,7 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("run3", "Ferrier", class = "btn-link btn-lg", style = "padding:42px;")
+            actionButton("run3", "Ferrier", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
@@ -238,12 +238,12 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("run4", "Healer", class = "btn-link btn-lg", style = "padding:42px;")
+            actionButton("run4", "Healer", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
             align = "left",
-            actionButton("run4b", "", class = "btn-link btn-lg", icon = icon("bandage", verify_fa = FALSE))
+            actionButton("run4b", "", class = "btn-link btn-lg", icon = icon("bottle-droplet", verify_fa = FALSE))
           )
         ),
         br(),
@@ -251,7 +251,7 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("run5", "Tavern", class = "btn-link btn-lg", style = "padding:42px;")
+            actionButton("run5", "Tavern", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
@@ -264,12 +264,12 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("run6", "Trader", class = "btn-link btn-lg", style = "padding:42px;")
+            actionButton("run6", "Trader", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
             align = "left",
-            actionButton("run6b", "", class = "btn-link btn-lg", icon = icon("cash-register", verify_fa = FALSE))
+            actionButton("run6b", "", class = "btn-link btn-lg", icon = icon("scale-balanced", verify_fa = FALSE))
           )
         ),
         br(),
@@ -277,7 +277,7 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("run7", "Trainer", class = "btn-link btn-lg", style = "padding:42px;")
+            actionButton("run7", "Trainer", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
