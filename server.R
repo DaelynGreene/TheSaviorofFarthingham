@@ -1,6 +1,3 @@
-#this is new
-
-
 server <- function(input, output, session) {
   ClickCounter1 <- reactiveValues(NumberClicks1 = 0)
   observeEvent(input$run1, {

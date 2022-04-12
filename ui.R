@@ -1,6 +1,3 @@
-#this is new
-
-
 ui<-fluidPage(
   
   tags$style("@import url(https://use.fontawesome.com/releases/v6.1.1/css/all.css);",
