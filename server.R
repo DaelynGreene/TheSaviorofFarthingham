@@ -1,210 +1,151 @@
 server <- function(input, output, session) {
-  ClickCounter1 <- reactiveValues(NumberClicks1 = 0)
-  observeEvent(input$run1, {
-    ClickCounter1$NumberClicks1 <- 1
+  ShopOption1Counter <- reactiveValues(ShopOption1Clicks = 0)
+  observeEvent(input$ShopOption1, {
+    ShopOption1Counter$ShopOption1Clicks <- 1
   })
 
-  ClickCounter2 <- reactiveValues(NumberClicks2 = 0)
-  observeEvent(input$run1b, {
-    ClickCounter2$NumberClicks2 <- 1
+  ShopOption2Counter <- reactiveValues(ShopOption2Clicks = 0)
+  observeEvent(input$ShopOption1b, {
+    ShopOption2Counter$ShopOption2Clicks <- 1
   })
 
-  ClickCounter3 <- reactiveValues(NumberClicks3 = 0)
-  observeEvent(input$run2, {
-    ClickCounter3$NumberClicks3 <- 1
+  ShopOption3Counter <- reactiveValues(ShopOption3Clicks = 0)
+  observeEvent(input$ShopOption2, {
+    ShopOption3Counter$ShopOption3Clicks <- 1
   })
 
-  ClickCounter4 <- reactiveValues(NumberClicks4 = 0)
-  observeEvent(input$run2b, {
-    ClickCounter4$NumberClicks4 <- 1
+  ShopOption4Counter <- reactiveValues(ShopOption4Clicks = 0)
+  observeEvent(input$ShopOption2b, {
+    ShopOption4Counter$ShopOption4Clicks <- 1
   })
 
-  ClickCounter5 <- reactiveValues(NumberClicks5 = 0)
-  observeEvent(input$run3, {
-    ClickCounter5$NumberClicks5 <- 1
+  ShopOption5Counter <- reactiveValues(ShopOption5Clicks = 0)
+  observeEvent(input$ShopOption3, {
+    ShopOption5Counter$ShopOption5Clicks <- 1
   })
 
-  ClickCounter6 <- reactiveValues(NumberClicks6 = 0)
-  observeEvent(input$run3b, {
-    ClickCounter6$NumberClicks6 <- 1
+  ShopOption6Counter <- reactiveValues(ShopOption6Clicks = 0)
+  observeEvent(input$ShopOption3b, {
+    ShopOption6Counter$ShopOption6Clicks <- 1
   })
 
-  ClickCounter7 <- reactiveValues(NumberClicks7 = 0)
-  observeEvent(input$run4, {
-    ClickCounter7$NumberClicks7 <- 1
+  ShopOption7Counter <- reactiveValues(ShopOption7Clicks = 0)
+  observeEvent(input$ShopOption4, {
+    ShopOption7Counter$ShopOption7Clicks <- 1
   })
 
-  ClickCounter8 <- reactiveValues(NumberClicks8 = 0)
-  observeEvent(input$run4b, {
-    ClickCounter8$NumberClicks8 <- 1
+  ShopOption8Counter <- reactiveValues(ShopOption8Clicks = 0)
+  observeEvent(input$ShopOption4b, {
+    ShopOption8Counter$ShopOption8Clicks <- 1
   })
 
-  ClickCounter9 <- reactiveValues(NumberClicks9 = 0)
-  observeEvent(input$run5, {
-    ClickCounter9$NumberClicks9 <- 1
+  ShopOption9Counter <- reactiveValues(ShopOption9Clicks = 0)
+  observeEvent(input$ShopOption5, {
+    ShopOption9Counter$ShopOption9Clicks <- 1
   })
 
-  ClickCounter10 <- reactiveValues(NumberClicks10 = 0)
-  observeEvent(input$run5b, {
-    ClickCounter10$NumberClicks10 <- 1
+  ShopOption10Counter <- reactiveValues(ShopOption10Clicks = 0)
+  observeEvent(input$ShopOption5b, {
+    ShopOption10Counter$ShopOption10Clicks <- 1
   })
-
-  ClickCounter11 <- reactiveValues(NumberClicks11 = 0)
-  observeEvent(input$run6, {
-    ClickCounter11$NumberClicks11 <- 1
-  })
-
-  ClickCounter12 <- reactiveValues(NumberClicks12 = 0)
-  observeEvent(input$run6b, {
-    ClickCounter12$NumberClicks12 <- 1
-  })
-
-  ClickCounter13 <- reactiveValues(NumberClicks13 = 0)
-  observeEvent(input$run7, {
-    ClickCounter13$NumberClicks13 <- 1
-  })
-
-  ClickCounter14 <- reactiveValues(NumberClicks14 = 0)
-  observeEvent(input$run7b, {
-    ClickCounter14$NumberClicks14 <- 1
+  
+  GoToShopCounter <- reactiveValues(GoShopping = 0)
+  observeEvent(input$GoToShopping, {
+    GoToShopCounter$GoShopping <- 1
   })
 
 
 
-  observeEvent(input$reset1, {
-    ClickCounter1$NumberClicks1 <- 0
-    ClickCounter2$NumberClicks2 <- 0
-    ClickCounter3$NumberClicks3 <- 0
-    ClickCounter4$NumberClicks4 <- 0
-    ClickCounter5$NumberClicks5 <- 0
-    ClickCounter6$NumberClicks6 <- 0
-    ClickCounter7$NumberClicks7 <- 0
-    ClickCounter8$NumberClicks8 <- 0
-    ClickCounter9$NumberClicks9 <- 0
-    ClickCounter10$NumberClicks10 <- 0
-    ClickCounter11$NumberClicks11 <- 0
-    ClickCounter12$NumberClicks12 <- 0
-    ClickCounter13$NumberClicks13 <- 0
-    ClickCounter14$NumberClicks14 <- 0
+  observeEvent(input$ShopOption1Reset, {
+    ShopOption1Counter$ShopOption1Clicks <- 0
+    ShopOption2Counter$ShopOption2Clicks <- 0
+    ShopOption3Counter$ShopOption3Clicks <- 0
+    ShopOption4Counter$ShopOption4Clicks <- 0
+    ShopOption5Counter$ShopOption5Clicks <- 0
+    ShopOption6Counter$ShopOption6Clicks <- 0
+    ShopOption7Counter$ShopOption7Clicks <- 0
+    ShopOption8Counter$ShopOption8Clicks <- 0
+    ShopOption9Counter$ShopOption9Clicks <- 0
+    ShopOption10Counter$ShopOption10Clicks <- 0
   })
 
-  observeEvent(input$reset2, {
-    ClickCounter1$NumberClicks1 <- 0
-    ClickCounter2$NumberClicks2 <- 0
-    ClickCounter3$NumberClicks3 <- 0
-    ClickCounter4$NumberClicks4 <- 0
-    ClickCounter5$NumberClicks5 <- 0
-    ClickCounter6$NumberClicks6 <- 0
-    ClickCounter7$NumberClicks7 <- 0
-    ClickCounter8$NumberClicks8 <- 0
-    ClickCounter9$NumberClicks9 <- 0
-    ClickCounter10$NumberClicks10 <- 0
-    ClickCounter11$NumberClicks11 <- 0
-    ClickCounter12$NumberClicks12 <- 0
-    ClickCounter13$NumberClicks13 <- 0
-    ClickCounter14$NumberClicks14 <- 0
+  observeEvent(input$ShopOption2Reset, {
+    ShopOption1Counter$ShopOption1Clicks <- 0
+    ShopOption2Counter$ShopOption2Clicks <- 0
+    ShopOption3Counter$ShopOption3Clicks <- 0
+    ShopOption4Counter$ShopOption4Clicks <- 0
+    ShopOption5Counter$ShopOption5Clicks <- 0
+    ShopOption6Counter$ShopOption6Clicks <- 0
+    ShopOption7Counter$ShopOption7Clicks <- 0
+    ShopOption8Counter$ShopOption8Clicks <- 0
+    ShopOption9Counter$ShopOption9Clicks <- 0
+    ShopOption10Counter$ShopOption10Clicks <- 0
   })
 
-  observeEvent(input$reset3, {
-    ClickCounter1$NumberClicks1 <- 0
-    ClickCounter2$NumberClicks2 <- 0
-    ClickCounter3$NumberClicks3 <- 0
-    ClickCounter4$NumberClicks4 <- 0
-    ClickCounter5$NumberClicks5 <- 0
-    ClickCounter6$NumberClicks6 <- 0
-    ClickCounter7$NumberClicks7 <- 0
-    ClickCounter8$NumberClicks8 <- 0
-    ClickCounter9$NumberClicks9 <- 0
-    ClickCounter10$NumberClicks10 <- 0
-    ClickCounter11$NumberClicks11 <- 0
-    ClickCounter12$NumberClicks12 <- 0
-    ClickCounter13$NumberClicks13 <- 0
-    ClickCounter14$NumberClicks14 <- 0
+  observeEvent(input$ShopOption3Reset, {
+    ShopOption1Counter$ShopOption1Clicks <- 0
+    ShopOption2Counter$ShopOption2Clicks <- 0
+    ShopOption3Counter$ShopOption3Clicks <- 0
+    ShopOption4Counter$ShopOption4Clicks <- 0
+    ShopOption5Counter$ShopOption5Clicks <- 0
+    ShopOption6Counter$ShopOption6Clicks <- 0
+    ShopOption7Counter$ShopOption7Clicks <- 0
+    ShopOption8Counter$ShopOption8Clicks <- 0
+    ShopOption9Counter$ShopOption9Clicks <- 0
+    ShopOption10Counter$ShopOption10Clicks <- 0
   })
 
-  observeEvent(input$reset4, {
-    ClickCounter1$NumberClicks1 <- 0
-    ClickCounter2$NumberClicks2 <- 0
-    ClickCounter3$NumberClicks3 <- 0
-    ClickCounter4$NumberClicks4 <- 0
-    ClickCounter5$NumberClicks5 <- 0
-    ClickCounter6$NumberClicks6 <- 0
-    ClickCounter7$NumberClicks7 <- 0
-    ClickCounter8$NumberClicks8 <- 0
-    ClickCounter9$NumberClicks9 <- 0
-    ClickCounter10$NumberClicks10 <- 0
-    ClickCounter11$NumberClicks11 <- 0
-    ClickCounter12$NumberClicks12 <- 0
-    ClickCounter13$NumberClicks13 <- 0
-    ClickCounter14$NumberClicks14 <- 0
+  observeEvent(input$ShopOption4Reset, {
+    ShopOption1Counter$ShopOption1Clicks <- 0
+    ShopOption2Counter$ShopOption2Clicks <- 0
+    ShopOption3Counter$ShopOption3Clicks <- 0
+    ShopOption4Counter$ShopOption4Clicks <- 0
+    ShopOption5Counter$ShopOption5Clicks <- 0
+    ShopOption6Counter$ShopOption6Clicks <- 0
+    ShopOption7Counter$ShopOption7Clicks <- 0
+    ShopOption8Counter$ShopOption8Clicks <- 0
+    ShopOption9Counter$ShopOption9Clicks <- 0
+    ShopOption10Counter$ShopOption10Clicks <- 0
   })
 
-  observeEvent(input$reset5, {
-    ClickCounter1$NumberClicks1 <- 0
-    ClickCounter2$NumberClicks2 <- 0
-    ClickCounter3$NumberClicks3 <- 0
-    ClickCounter4$NumberClicks4 <- 0
-    ClickCounter5$NumberClicks5 <- 0
-    ClickCounter6$NumberClicks6 <- 0
-    ClickCounter7$NumberClicks7 <- 0
-    ClickCounter8$NumberClicks8 <- 0
-    ClickCounter9$NumberClicks9 <- 0
-    ClickCounter10$NumberClicks10 <- 0
-    ClickCounter11$NumberClicks11 <- 0
-    ClickCounter12$NumberClicks12 <- 0
-    ClickCounter13$NumberClicks13 <- 0
-    ClickCounter14$NumberClicks14 <- 0
+  observeEvent(input$ShopOption5Reset, {
+    ShopOption1Counter$ShopOption1Clicks <- 0
+    ShopOption2Counter$ShopOption2Clicks <- 0
+    ShopOption3Counter$ShopOption3Clicks <- 0
+    ShopOption4Counter$ShopOption4Clicks <- 0
+    ShopOption5Counter$ShopOption5Clicks <- 0
+    ShopOption6Counter$ShopOption6Clicks <- 0
+    ShopOption7Counter$ShopOption7Clicks <- 0
+    ShopOption8Counter$ShopOption8Clicks <- 0
+    ShopOption9Counter$ShopOption9Clicks <- 0
+    ShopOption10Counter$ShopOption10Clicks <- 0
   })
+  
+  observeEvent(input$BackToTown, {GoToShopCounter$GoShopping <- 0})
 
-  observeEvent(input$reset6, {
-    ClickCounter1$NumberClicks1 <- 0
-    ClickCounter2$NumberClicks2 <- 0
-    ClickCounter3$NumberClicks3 <- 0
-    ClickCounter4$NumberClicks4 <- 0
-    ClickCounter5$NumberClicks5 <- 0
-    ClickCounter6$NumberClicks6 <- 0
-    ClickCounter7$NumberClicks7 <- 0
-    ClickCounter8$NumberClicks8 <- 0
-    ClickCounter9$NumberClicks9 <- 0
-    ClickCounter10$NumberClicks10 <- 0
-    ClickCounter11$NumberClicks11 <- 0
-    ClickCounter12$NumberClicks12 <- 0
-    ClickCounter13$NumberClicks13 <- 0
-    ClickCounter14$NumberClicks14 <- 0
-  })
 
-  observeEvent(input$reset7, {
-    ClickCounter1$NumberClicks1 <- 0
-    ClickCounter2$NumberClicks2 <- 0
-    ClickCounter3$NumberClicks3 <- 0
-    ClickCounter4$NumberClicks4 <- 0
-    ClickCounter5$NumberClicks5 <- 0
-    ClickCounter6$NumberClicks6 <- 0
-    ClickCounter7$NumberClicks7 <- 0
-    ClickCounter8$NumberClicks8 <- 0
-    ClickCounter9$NumberClicks9 <- 0
-    ClickCounter10$NumberClicks10 <- 0
-    ClickCounter11$NumberClicks11 <- 0
-    ClickCounter12$NumberClicks12 <- 0
-    ClickCounter13$NumberClicks13 <- 0
-    ClickCounter14$NumberClicks14 <- 0
-  })
-
+  #########################################################################################################################################
+  #when i uncomment lines 133, 135, and 241, everything kinda breaks. literally nothing renders. everything in that if statement shouldnt render, its working correctly, but the action button at line 133 isnt showing up and i dont know why
+  #########################################################################################################################################
 
   output$SaviorOfFarthingham <- renderUI({
-    if (ClickCounter1$NumberClicks1 == 0 & ClickCounter2$NumberClicks2 == 0 & ClickCounter3$NumberClicks3 == 0 & ClickCounter4$NumberClicks4 == 0 & ClickCounter5$NumberClicks5 == 0 & ClickCounter6$NumberClicks6 == 0 & ClickCounter7$NumberClicks7 == 0 & ClickCounter8$NumberClicks8 == 0 & ClickCounter9$NumberClicks9 == 0 & ClickCounter10$NumberClicks10 == 0 & ClickCounter11$NumberClicks11 == 0 & ClickCounter12$NumberClicks12 == 0 & ClickCounter13$NumberClicks13 == 0 & ClickCounter14$NumberClicks14 == 0) {
+    
+    # actionButton("GoToShopping","Shop")
+    
+    # if (GoToShopCounter$GoShopping == 1){
+        if (ShopOption1Counter$ShopOption1Clicks == 0 & ShopOption2Counter$ShopOption2Clicks == 0 & ShopOption3Counter$ShopOption3Clicks == 0 & ShopOption4Counter$ShopOption4Clicks == 0 & ShopOption5Counter$ShopOption5Clicks == 0 & ShopOption6Counter$ShopOption6Clicks == 0 & ShopOption7Counter$ShopOption7Clicks == 0 & ShopOption8Counter$ShopOption8Clicks == 0 & ShopOption9Counter$ShopOption9Clicks == 0 & ShopOption10Counter$ShopOption10Clicks == 0) {
       div(mainPanel(
         width = 12,
         fluidRow(
           column(
             width = 6,
             align = "right",
-            actionButton("run1", "Alchemist", class = "btn-link btn-lg", style = "padding:24px;")
+            actionButton("ShopOption1", "Alchemist", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
             align = "left",
-            actionButton("run1b", "", class = "btn-link btn-lg", icon = icon("mortar-pestle", verify_fa = FALSE))
+            actionButton("ShopOption1b", "", class = "btn-link btn-lg", icon = icon("mortar-pestle", verify_fa = FALSE))
           )
         ),
         br(),
@@ -212,12 +153,12 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("run2", "Bank", class = "btn-link btn-lg", style = "padding:24px;")
+            actionButton("ShopOption2", "Bank", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
             align = "left",
-            actionButton("run2b", "", class = "btn-link btn-lg", icon = icon("sack-dollar", verify_fa = FALSE))
+            actionButton("ShopOption2b", "", class = "btn-link btn-lg", icon = icon("sack-dollar", verify_fa = FALSE))
           )
         ),
         br(),
@@ -225,12 +166,12 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("run3", "Ferrier", class = "btn-link btn-lg", style = "padding:24px;")
+            actionButton("ShopOption3", "Ferrier", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
             align = "left",
-            actionButton("run3b", "", class = "btn-link btn-lg", icon = icon("horse", verify_fa = FALSE))
+            actionButton("ShopOption3b", "", class = "btn-link btn-lg", icon = icon("horse", verify_fa = FALSE))
           )
         ),
         br(),
@@ -238,12 +179,12 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("run4", "Healer", class = "btn-link btn-lg", style = "padding:24px;")
+            actionButton("ShopOption4", "Tavern", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
             align = "left",
-            actionButton("run4b", "", class = "btn-link btn-lg", icon = icon("bottle-droplet", verify_fa = FALSE))
+            actionButton("ShopOption4b", "", class = "btn-link btn-lg", icon = icon("beer-mug-empty", verify_fa = FALSE))
           )
         ),
         br(),
@@ -251,76 +192,60 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("run5", "Tavern", class = "btn-link btn-lg", style = "padding:24px;")
+            actionButton("ShopOption5", "Trader", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
             align = "left",
-            actionButton("run5b", "", class = "btn-link btn-lg", icon = icon("beer-mug-empty", verify_fa = FALSE))
-          )
-        ),
-        br(),
-        fluidRow(
-          column(
-            width = 6,
-            align = "right",
-            actionButton("run6", "Trader", class = "btn-link btn-lg", style = "padding:24px;")
+            actionButton("ShopOption5b", "", class = "btn-link btn-lg", icon = icon("scale-balanced", verify_fa = FALSE))
           ),
-          column(
-            width = 6,
-            align = "left",
-            actionButton("run6b", "", class = "btn-link btn-lg", icon = icon("scale-balanced", verify_fa = FALSE))
-          )
-        ),
-        br(),
-        fluidRow(
-          column(
-            width = 6,
-            align = "right",
-            actionButton("run7", "Trainer", class = "btn-link btn-lg", style = "padding:24px;")
-          ),
-          column(
-            width = 6,
-            align = "left",
-            actionButton("run7b", "", class = "btn-link btn-lg", icon = icon("dumbbell", verify_fa = FALSE))
+          br(),
+          br(),
+          br(),
+          fluidRow(
+            column(
+              width = 12,
+              align = "center",
+              actionButton("BackToTown", "Leave Shops", class = "btn-link btn-lg", style = "padding:24px;")
+            )
           )
         )
       ))
-    } else if (ClickCounter1$NumberClicks1 == 1 | ClickCounter2$NumberClicks2 == 1) {
+    } else if (ShopOption1Counter$ShopOption1Clicks == 1 | ShopOption2Counter$ShopOption2Clicks == 1) {
       div(mainPanel(
         h3("Alchemist has been clicked."),
-        actionButton("reset1", "Back To Mainpage")
+        actionButton("ShopOption1Reset", "Back To Shops")
       ))
-    } else if (ClickCounter3$NumberClicks3 == 1 | ClickCounter4$NumberClicks4 == 1) {
+    } else if (ShopOption3Counter$ShopOption3Clicks == 1 | ShopOption4Counter$ShopOption4Clicks == 1) {
       div(mainPanel(
         h3("Bank has been clicked."),
-        actionButton("reset2", "Back To Mainpage")
+        actionButton("ShopOption2Reset", "Back To Shops")
       ))
-    } else if (ClickCounter5$NumberClicks5 == 1 | ClickCounter6$NumberClicks6 == 1) {
+    } else if (ShopOption5Counter$ShopOption5Clicks == 1 | ShopOption6Counter$ShopOption6Clicks == 1) {
       div(mainPanel(
         h3("Ferrier has been clicked."),
-        actionButton("reset3", "Back To Mainpage")
+        actionButton("ShopOption3Reset", "Back To Shops")
       ))
-    } else if (ClickCounter7$NumberClicks7 == 1 | ClickCounter8$NumberClicks8 == 1) {
-      div(mainPanel(
-        h3("Healer has been clicked."),
-        actionButton("reset4", "Back To Mainpage")
-      ))
-    } else if (ClickCounter9$NumberClicks9 == 1 | ClickCounter10$NumberClicks10 == 1) {
+    } else if (ShopOption7Counter$ShopOption7Clicks == 1 | ShopOption8Counter$ShopOption8Clicks == 1) {
       div(mainPanel(
         h3("Tavern has been clicked."),
-        actionButton("reset5", "Back To Mainpage")
+        actionButton("ShopOption4Reset", "Back To Shops")
       ))
-    } else if (ClickCounter11$NumberClicks11 == 1 | ClickCounter12$NumberClicks12 == 1) {
+    } else if (ShopOption9Counter$ShopOption9Clicks == 1 | ShopOption10Counter$ShopOption10Clicks == 1) {
       div(mainPanel(
         h3("Trader has been clicked."),
-        actionButton("reset6", "Back To Mainpage")
+        actionButton("ShopOption5Reset", "Back To Shops")
       ))
-    } else if (ClickCounter13$NumberClicks13 == 1 | ClickCounter14$NumberClicks14 == 1) {
-      div(mainPanel(
-        h3("Trainer has been clicked."),
-        actionButton("reset7", "Back To Mainpage")
-      ))
-    }
+    } 
+    
+  # }
+    
+    
+    
+    
+    
+    
+    
+    
   })
 }
