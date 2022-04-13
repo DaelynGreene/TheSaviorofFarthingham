@@ -11,8 +11,7 @@ ui<-fluidPage(
              HTML("#ShopOption7{color: #00d6d6; font-family: papyrus; font-weight: bolder; font-size: 30px}")
             ),
   
-  uiOutput("SaviorOfFarthingham"),
+  uiOutput("SaviorOfFarthingham")
   
-  textOutput("title")
   
   )

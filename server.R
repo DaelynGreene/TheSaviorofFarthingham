@@ -125,15 +125,48 @@ server <- function(input, output, session) {
 
 
   #########################################################################################################################################
-  #when i uncomment lines 133, 135, and 241, everything kinda breaks. literally nothing renders. everything in that if statement shouldnt render, its working correctly, but the action button at line 133 isnt showing up and i dont know why
+  #when i uncomment lines 133, 135, and 241, everything kinda breaks. everything in that if statement shouldnt render, its working correctly, but the action button at line 133 isnt showing up and i dont know why. if i move it to the ui, it works properly
   #########################################################################################################################################
 
   output$SaviorOfFarthingham <- renderUI({
+  
+        
     
-    # actionButton("GoToShopping","Shop")
-    
-    # if (GoToShopCounter$GoShopping == 1){
-        if (ShopOption1Counter$ShopOption1Clicks == 0 & ShopOption2Counter$ShopOption2Clicks == 0 & ShopOption3Counter$ShopOption3Clicks == 0 & ShopOption4Counter$ShopOption4Clicks == 0 & ShopOption5Counter$ShopOption5Clicks == 0 & ShopOption6Counter$ShopOption6Clicks == 0 & ShopOption7Counter$ShopOption7Clicks == 0 & ShopOption8Counter$ShopOption8Clicks == 0 & ShopOption9Counter$ShopOption9Clicks == 0 & ShopOption10Counter$ShopOption10Clicks == 0) {
+    if (GoToShopCounter$GoShopping == 0) {
+      actionButton("GoToShopping","Shop")
+      
+      div(mainPanel(
+        width = 12,
+        fluidRow(
+          column(
+            width = 12,
+            align = "center",
+            actionButton("GoToShopping", "Shop", class = "btn-link btn-lg")
+          )),
+        fluidRow(
+          column(
+            width = 12,
+            align = "center",
+            actionButton("GoToTraining", "Train", class = "btn-link btn-lg")
+          )
+        ),
+        fluidRow(
+          column(
+            width = 12,
+            align = "center",
+            actionButton("GoToHealing", "Heal", class = "btn-link btn-lg")
+          )
+        ),
+        fluidRow(
+          column(
+            width = 12,
+            align = "center",
+            actionButton("GoExploring", "Explore", class = "btn-link btn-lg")
+          )
+        )
+          ))
+            
+        }else if (ShopOption1Counter$ShopOption1Clicks == 0 & ShopOption2Counter$ShopOption2Clicks == 0 & ShopOption3Counter$ShopOption3Clicks == 0 & ShopOption4Counter$ShopOption4Clicks == 0 & ShopOption5Counter$ShopOption5Clicks == 0 & ShopOption6Counter$ShopOption6Clicks == 0 & ShopOption7Counter$ShopOption7Clicks == 0 & ShopOption8Counter$ShopOption8Clicks == 0 & ShopOption9Counter$ShopOption9Clicks == 0 & ShopOption10Counter$ShopOption10Clicks == 0) {
       div(mainPanel(
         width = 12,
         fluidRow(
@@ -206,7 +239,7 @@ server <- function(input, output, session) {
             column(
               width = 12,
               align = "center",
-              actionButton("BackToTown", "Leave Shops", class = "btn-link btn-lg", style = "padding:24px;")
+              actionButton("BackToTown", "Leave Shops", class = "btn-link btn-lg")
             )
           )
         )
@@ -238,7 +271,6 @@ server <- function(input, output, session) {
       ))
     } 
     
-  # }
     
     
     
