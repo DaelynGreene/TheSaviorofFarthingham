@@ -53,6 +53,21 @@ server <- function(input, output, session) {
   observeEvent(input$GoToShopping, {
     GoToShopCounter$GoShopping <- 1
   })
+  
+  GoToTrainCounter <- reactiveValues(GoTraining = 0)
+  observeEvent(input$GoToTraining, {
+    GoToTrainCounter$GoTraining <- 1
+  })
+  
+  GoToHealCounter <- reactiveValues(GoHealing = 0)
+  observeEvent(input$GoToHealing, {
+    GoToHealCounter$GoHealing <- 1
+  })
+  
+  GoToExploreCounter <- reactiveValues(GoExploring = 0)
+  observeEvent(input$GoToExploring, {
+    GoToExploreCounter$GoExploring <- 1
+  })
 
 
 
@@ -121,8 +136,32 @@ server <- function(input, output, session) {
     ShopOption10Counter$ShopOption10Clicks <- 0
   })
 
-  observeEvent(input$BackToTown, {
+  observeEvent(input$BackToTown1, {
     GoToShopCounter$GoShopping <- 0
+    GoToTrainCounter$GoTraining <- 0
+    GoToHealCounter$GoHealing <- 0
+    GoToExploreCounter$GoExploring <- 0
+  })
+  
+  observeEvent(input$BackToTown2, {
+    GoToShopCounter$GoShopping <- 0
+    GoToTrainCounter$GoTraining <- 0
+    GoToHealCounter$GoHealing <- 0
+    GoToExploreCounter$GoExploring <- 0
+  })
+  
+  observeEvent(input$BackToTown3, {
+    GoToShopCounter$GoShopping <- 0
+    GoToTrainCounter$GoTraining <- 0
+    GoToHealCounter$GoHealing <- 0
+    GoToExploreCounter$GoExploring <- 0
+  })
+  
+  observeEvent(input$BackToTown4, {
+    GoToShopCounter$GoShopping <- 0
+    GoToTrainCounter$GoTraining <- 0
+    GoToHealCounter$GoHealing <- 0
+    GoToExploreCounter$GoExploring <- 0
   })
 
 
@@ -138,7 +177,7 @@ server <- function(input, output, session) {
     
     
 ###########################################################################################################################################################    
-    #MY QUESTION IS IS WHY DO THESE NOT SHOW UP? IF ITS NOT IN THE IF, ITS LIKING IT JUST STRAIGHT UP DOESNT EXIST
+    #MY QUESTION IS IS WHY DO THESE NOT SHOW UP? IF ITS NOT IN THE IF, ITS LIKE IT JUST STRAIGHT UP DOESNT EXIST
     actionButton("the","the")
     h3("this is a test")
 ###########################################################################################################################################################    
@@ -152,7 +191,7 @@ server <- function(input, output, session) {
     
     
     
-      if (GoToShopCounter$GoShopping == 0) {
+      if (GoToShopCounter$GoShopping == 0 & GoToHealCounter$GoHealing == 0 & GoToTrainCounter$GoTraining == 0 & GoToExploreCounter$GoExploring == 0) {
       div(mainPanel(
         width = 12,
         fluidRow(
@@ -180,7 +219,7 @@ server <- function(input, output, session) {
           column(
             width = 12,
             align = "center",
-            actionButton("GoExploring", "Explore", class = "btn-link btn-lg")
+            actionButton("GoToExploring", "Explore", class = "btn-link btn-lg")
           )
         )
       ))
@@ -262,7 +301,7 @@ server <- function(input, output, session) {
             column(
               width = 12,
               align = "center",
-              actionButton("BackToTown", "Leave Shops", class = "btn-link btn-lg")
+              actionButton("BackToTown1", "Leave Shops", class = "btn-link btn-lg")
             )
           )
         )
@@ -291,6 +330,21 @@ server <- function(input, output, session) {
       div(mainPanel(
         h3("Trader has been clicked."),
         actionButton("ShopOption5Reset", "Back To Shops")
+      ))
+    } else if (GoToTrainCounter$GoTraining == 1){
+      div(mainPanel(
+        h3("Training has been clicked."),
+        actionButton("BackToTown2", "Leave Training", class = "btn-link btn-lg")
+      ))
+    } else if (GoToHealCounter$GoHealing == 1){
+      div(mainPanel(
+        h3("Healing has been clicked."),
+        actionButton("BackToTown3", "Leave Healing", class = "btn-link btn-lg")
+      ))
+    } else if (GoToExploreCounter$GoExploring == 1){
+      div(mainPanel(
+        h3("Exploring has been clicked."),
+        actionButton("BackToTown4", "Leave Exploring", class = "btn-link btn-lg")
       ))
     }
     
