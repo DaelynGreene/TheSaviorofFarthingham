@@ -7,8 +7,11 @@ ui<-fluidPage(
              HTML("#ShopOption3{color: #00d6d6; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
              HTML("#ShopOption4{color: #00d6d6; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
              HTML("#ShopOption5{color: #00d6d6; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
-             HTML("#ShopOption6{color: #00d6d6; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
-             HTML("#ShopOption7{color: #00d6d6; font-family: papyrus; font-weight: bolder; font-size: 30px}")
+             HTML("#BackToTown{color: #ff8200; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
+             HTML("#GoToShopping{color: #ff8200; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
+             HTML("#GoExploring{color: #ff8200; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
+             HTML("#GoToTraining{color: #ff8200; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
+             HTML("#GoToHealing{color: #ff8200; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
             ),
   
   uiOutput("SaviorOfFarthingham")

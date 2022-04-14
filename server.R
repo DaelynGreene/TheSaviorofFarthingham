@@ -48,7 +48,7 @@ server <- function(input, output, session) {
   observeEvent(input$ShopOption5b, {
     ShopOption10Counter$ShopOption10Clicks <- 1
   })
-  
+
   GoToShopCounter <- reactiveValues(GoShopping = 0)
   observeEvent(input$GoToShopping, {
     GoToShopCounter$GoShopping <- 1
@@ -120,21 +120,15 @@ server <- function(input, output, session) {
     ShopOption9Counter$ShopOption9Clicks <- 0
     ShopOption10Counter$ShopOption10Clicks <- 0
   })
-  
-  observeEvent(input$BackToTown, {GoToShopCounter$GoShopping <- 0})
+
+  observeEvent(input$BackToTown, {
+    GoToShopCounter$GoShopping <- 0
+  })
 
 
-  #########################################################################################################################################
-  #when i uncomment lines 133, 135, and 241, everything kinda breaks. everything in that if statement shouldnt render, its working correctly, but the action button at line 133 isnt showing up and i dont know why. if i move it to the ui, it works properly
-  #########################################################################################################################################
 
   output$SaviorOfFarthingham <- renderUI({
-  
-        
-    
     if (GoToShopCounter$GoShopping == 0) {
-      actionButton("GoToShopping","Shop")
-      
       div(mainPanel(
         width = 12,
         fluidRow(
@@ -142,7 +136,8 @@ server <- function(input, output, session) {
             width = 12,
             align = "center",
             actionButton("GoToShopping", "Shop", class = "btn-link btn-lg")
-          )),
+          )
+        ),
         fluidRow(
           column(
             width = 12,
@@ -164,9 +159,8 @@ server <- function(input, output, session) {
             actionButton("GoExploring", "Explore", class = "btn-link btn-lg")
           )
         )
-          ))
-            
-        }else if (ShopOption1Counter$ShopOption1Clicks == 0 & ShopOption2Counter$ShopOption2Clicks == 0 & ShopOption3Counter$ShopOption3Clicks == 0 & ShopOption4Counter$ShopOption4Clicks == 0 & ShopOption5Counter$ShopOption5Clicks == 0 & ShopOption6Counter$ShopOption6Clicks == 0 & ShopOption7Counter$ShopOption7Clicks == 0 & ShopOption8Counter$ShopOption8Clicks == 0 & ShopOption9Counter$ShopOption9Clicks == 0 & ShopOption10Counter$ShopOption10Clicks == 0) {
+      ))
+    } else if (GoToShopCounter$GoShopping == 1 & ShopOption1Counter$ShopOption1Clicks == 0 & ShopOption2Counter$ShopOption2Clicks == 0 & ShopOption3Counter$ShopOption3Clicks == 0 & ShopOption4Counter$ShopOption4Clicks == 0 & ShopOption5Counter$ShopOption5Clicks == 0 & ShopOption6Counter$ShopOption6Clicks == 0 & ShopOption7Counter$ShopOption7Clicks == 0 & ShopOption8Counter$ShopOption8Clicks == 0 & ShopOption9Counter$ShopOption9Clicks == 0 & ShopOption10Counter$ShopOption10Clicks == 0) {
       div(mainPanel(
         width = 12,
         fluidRow(
@@ -235,6 +229,11 @@ server <- function(input, output, session) {
           br(),
           br(),
           br(),
+          br(),
+          br(),
+          br(),
+          br(),
+          br(),
           fluidRow(
             column(
               width = 12,
@@ -269,15 +268,6 @@ server <- function(input, output, session) {
         h3("Trader has been clicked."),
         actionButton("ShopOption5Reset", "Back To Shops")
       ))
-    } 
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    }
   })
 }

@@ -7,3 +7,4 @@ BackstoryText3<-"This is your story."
 
 TitleWords<-"The Savior of Farthingham"
 
+PlayerSaveData <- read.csv("PlayerSaveData.csv")
