@@ -128,7 +128,31 @@ server <- function(input, output, session) {
 
 
   output$SaviorOfFarthingham <- renderUI({
-    if (GoToShopCounter$GoShopping == 0) {
+  
+    
+    
+    
+    
+    
+    
+    
+    
+###########################################################################################################################################################    
+    #MY QUESTION IS IS WHY DO THESE NOT SHOW UP? IF ITS NOT IN THE IF, ITS LIKING IT JUST STRAIGHT UP DOESNT EXIST
+    actionButton("the","the")
+    h3("this is a test")
+###########################################################################################################################################################    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+      if (GoToShopCounter$GoShopping == 0) {
       div(mainPanel(
         width = 12,
         fluidRow(
@@ -269,5 +293,12 @@ server <- function(input, output, session) {
         actionButton("ShopOption5Reset", "Back To Shops")
       ))
     }
+    
+    
+    
+    
+    
+    
+    
   })
 }
