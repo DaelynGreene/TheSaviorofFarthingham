@@ -39,16 +39,6 @@ server <- function(input, output, session) {
     ShopOption8Counter$ShopOption8Clicks <- 1
   })
 
-  ShopOption9Counter <- reactiveValues(ShopOption9Clicks = 0)
-  observeEvent(input$ShopOption5, {
-    ShopOption9Counter$ShopOption9Clicks <- 1
-  })
-
-  ShopOption10Counter <- reactiveValues(ShopOption10Clicks = 0)
-  observeEvent(input$ShopOption5b, {
-    ShopOption10Counter$ShopOption10Clicks <- 1
-  })
-
   GoToShopCounter <- reactiveValues(GoShopping = 0)
   observeEvent(input$GoToShopping, {
     GoToShopCounter$GoShopping <- 1
@@ -68,6 +58,11 @@ server <- function(input, output, session) {
   observeEvent(input$GoToExploring, {
     GoToExploreCounter$GoExploring <- 1
   })
+  
+  GoToBankCounter <- reactiveValues(GoBanking = 0)
+  observeEvent(input$GoToBanking, {
+    GoToBankCounter$GoBanking <- 1
+  })
 
 
 
@@ -80,8 +75,6 @@ server <- function(input, output, session) {
     ShopOption6Counter$ShopOption6Clicks <- 0
     ShopOption7Counter$ShopOption7Clicks <- 0
     ShopOption8Counter$ShopOption8Clicks <- 0
-    ShopOption9Counter$ShopOption9Clicks <- 0
-    ShopOption10Counter$ShopOption10Clicks <- 0
   })
 
   observeEvent(input$ShopOption2Reset, {
@@ -93,8 +86,6 @@ server <- function(input, output, session) {
     ShopOption6Counter$ShopOption6Clicks <- 0
     ShopOption7Counter$ShopOption7Clicks <- 0
     ShopOption8Counter$ShopOption8Clicks <- 0
-    ShopOption9Counter$ShopOption9Clicks <- 0
-    ShopOption10Counter$ShopOption10Clicks <- 0
   })
 
   observeEvent(input$ShopOption3Reset, {
@@ -106,8 +97,6 @@ server <- function(input, output, session) {
     ShopOption6Counter$ShopOption6Clicks <- 0
     ShopOption7Counter$ShopOption7Clicks <- 0
     ShopOption8Counter$ShopOption8Clicks <- 0
-    ShopOption9Counter$ShopOption9Clicks <- 0
-    ShopOption10Counter$ShopOption10Clicks <- 0
   })
 
   observeEvent(input$ShopOption4Reset, {
@@ -119,21 +108,6 @@ server <- function(input, output, session) {
     ShopOption6Counter$ShopOption6Clicks <- 0
     ShopOption7Counter$ShopOption7Clicks <- 0
     ShopOption8Counter$ShopOption8Clicks <- 0
-    ShopOption9Counter$ShopOption9Clicks <- 0
-    ShopOption10Counter$ShopOption10Clicks <- 0
-  })
-
-  observeEvent(input$ShopOption5Reset, {
-    ShopOption1Counter$ShopOption1Clicks <- 0
-    ShopOption2Counter$ShopOption2Clicks <- 0
-    ShopOption3Counter$ShopOption3Clicks <- 0
-    ShopOption4Counter$ShopOption4Clicks <- 0
-    ShopOption5Counter$ShopOption5Clicks <- 0
-    ShopOption6Counter$ShopOption6Clicks <- 0
-    ShopOption7Counter$ShopOption7Clicks <- 0
-    ShopOption8Counter$ShopOption8Clicks <- 0
-    ShopOption9Counter$ShopOption9Clicks <- 0
-    ShopOption10Counter$ShopOption10Clicks <- 0
   })
 
   observeEvent(input$BackToTown1, {
@@ -141,6 +115,7 @@ server <- function(input, output, session) {
     GoToTrainCounter$GoTraining <- 0
     GoToHealCounter$GoHealing <- 0
     GoToExploreCounter$GoExploring <- 0
+    GoToBankCounter$GoBanking <- 0
   })
   
   observeEvent(input$BackToTown2, {
@@ -148,6 +123,7 @@ server <- function(input, output, session) {
     GoToTrainCounter$GoTraining <- 0
     GoToHealCounter$GoHealing <- 0
     GoToExploreCounter$GoExploring <- 0
+    GoToBankCounter$GoBanking <- 0
   })
   
   observeEvent(input$BackToTown3, {
@@ -155,6 +131,7 @@ server <- function(input, output, session) {
     GoToTrainCounter$GoTraining <- 0
     GoToHealCounter$GoHealing <- 0
     GoToExploreCounter$GoExploring <- 0
+    GoToBankCounter$GoBanking <- 0
   })
   
   observeEvent(input$BackToTown4, {
@@ -162,50 +139,42 @@ server <- function(input, output, session) {
     GoToTrainCounter$GoTraining <- 0
     GoToHealCounter$GoHealing <- 0
     GoToExploreCounter$GoExploring <- 0
+    GoToBankCounter$GoBanking <- 0
+  })
+  
+  observeEvent(input$BackToTown5, {
+    GoToShopCounter$GoShopping <- 0
+    GoToTrainCounter$GoTraining <- 0
+    GoToHealCounter$GoHealing <- 0
+    GoToExploreCounter$GoExploring <- 0
+    GoToBankCounter$GoBanking <- 0
   })
 
 
 
   output$SaviorOfFarthingham <- renderUI({
-  
-    
-    
-    
-    
-    
-    
-    
-    
-###########################################################################################################################################################    
-    #MY QUESTION IS IS WHY DO THESE NOT SHOW UP? IF ITS NOT IN THE IF, ITS LIKE IT JUST STRAIGHT UP DOESNT EXIST
-    actionButton("the","the")
-    h3("this is a test")
-###########################################################################################################################################################    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-      if (GoToShopCounter$GoShopping == 0 & GoToHealCounter$GoHealing == 0 & GoToTrainCounter$GoTraining == 0 & GoToExploreCounter$GoExploring == 0) {
+    if (GoToShopCounter$GoShopping == 0 & GoToHealCounter$GoHealing == 0 & GoToTrainCounter$GoTraining == 0 & GoToExploreCounter$GoExploring == 0 & GoToBankCounter$GoBanking == 0) {
       div(mainPanel(
         width = 12,
         fluidRow(
           column(
             width = 12,
             align = "center",
-            actionButton("GoToShopping", "Shop", class = "btn-link btn-lg")
+            h2("Welcome to Farthingham", style = "color: red; font-family: papyrus; font-weight: bolder; font-size: 30px")
           )
         ),
         fluidRow(
           column(
             width = 12,
             align = "center",
-            actionButton("GoToTraining", "Train", class = "btn-link btn-lg")
+            actionButton("GoToBanking", "Bank", class = "btn-link btn-lg")
+          )
+        ),
+        fluidRow(
+          column(
+            width = 12,
+            align = "center",
+            actionButton("GoToExploring", "Explore", class = "btn-link btn-lg")
           )
         ),
         fluidRow(
@@ -219,11 +188,18 @@ server <- function(input, output, session) {
           column(
             width = 12,
             align = "center",
-            actionButton("GoToExploring", "Explore", class = "btn-link btn-lg")
+            actionButton("GoToShopping", "Shop", class = "btn-link btn-lg")
+          )
+        ),
+        fluidRow(
+          column(
+            width = 12,
+            align = "center",
+            actionButton("GoToTraining", "Train", class = "btn-link btn-lg")
           )
         )
       ))
-    } else if (GoToShopCounter$GoShopping == 1 & ShopOption1Counter$ShopOption1Clicks == 0 & ShopOption2Counter$ShopOption2Clicks == 0 & ShopOption3Counter$ShopOption3Clicks == 0 & ShopOption4Counter$ShopOption4Clicks == 0 & ShopOption5Counter$ShopOption5Clicks == 0 & ShopOption6Counter$ShopOption6Clicks == 0 & ShopOption7Counter$ShopOption7Clicks == 0 & ShopOption8Counter$ShopOption8Clicks == 0 & ShopOption9Counter$ShopOption9Clicks == 0 & ShopOption10Counter$ShopOption10Clicks == 0) {
+    } else if (GoToShopCounter$GoShopping == 1 & ShopOption1Counter$ShopOption1Clicks == 0 & ShopOption2Counter$ShopOption2Clicks == 0 & ShopOption3Counter$ShopOption3Clicks == 0 & ShopOption4Counter$ShopOption4Clicks == 0 & ShopOption5Counter$ShopOption5Clicks == 0 & ShopOption6Counter$ShopOption6Clicks == 0 & ShopOption7Counter$ShopOption7Clicks == 0 & ShopOption8Counter$ShopOption8Clicks == 0) {
       div(mainPanel(
         width = 12,
         fluidRow(
@@ -243,12 +219,12 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("ShopOption2", "Bank", class = "btn-link btn-lg", style = "padding:24px;")
+            actionButton("ShopOption2", "Farrier", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
             align = "left",
-            actionButton("ShopOption2b", "", class = "btn-link btn-lg", icon = icon("sack-dollar", verify_fa = FALSE))
+            actionButton("ShopOption2b", "", class = "btn-link btn-lg", icon = icon("horse", verify_fa = FALSE))
           )
         ),
         br(),
@@ -256,12 +232,12 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("ShopOption3", "Ferrier", class = "btn-link btn-lg", style = "padding:24px;")
+            actionButton("ShopOption3", "Tavern", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
             align = "left",
-            actionButton("ShopOption3b", "", class = "btn-link btn-lg", icon = icon("horse", verify_fa = FALSE))
+            actionButton("ShopOption3b", "", class = "btn-link btn-lg", icon = icon("beer-mug-empty", verify_fa = FALSE))
           )
         ),
         br(),
@@ -269,25 +245,12 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("ShopOption4", "Tavern", class = "btn-link btn-lg", style = "padding:24px;")
+            actionButton("ShopOption4", "Trader", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
             align = "left",
-            actionButton("ShopOption4b", "", class = "btn-link btn-lg", icon = icon("beer-mug-empty", verify_fa = FALSE))
-          )
-        ),
-        br(),
-        fluidRow(
-          column(
-            width = 6,
-            align = "right",
-            actionButton("ShopOption5", "Trader", class = "btn-link btn-lg", style = "padding:24px;")
-          ),
-          column(
-            width = 6,
-            align = "left",
-            actionButton("ShopOption5b", "", class = "btn-link btn-lg", icon = icon("scale-balanced", verify_fa = FALSE))
+            actionButton("ShopOption4b", "", class = "btn-link btn-lg", icon = icon("scale-balanced", verify_fa = FALSE))
           ),
           br(),
           br(),
@@ -318,18 +281,13 @@ server <- function(input, output, session) {
       ))
     } else if (ShopOption5Counter$ShopOption5Clicks == 1 | ShopOption6Counter$ShopOption6Clicks == 1) {
       div(mainPanel(
-        h3("Ferrier has been clicked."),
+        h3("Farrier has been clicked."),
         actionButton("ShopOption3Reset", "Back To Shops")
       ))
     } else if (ShopOption7Counter$ShopOption7Clicks == 1 | ShopOption8Counter$ShopOption8Clicks == 1) {
       div(mainPanel(
         h3("Tavern has been clicked."),
         actionButton("ShopOption4Reset", "Back To Shops")
-      ))
-    } else if (ShopOption9Counter$ShopOption9Clicks == 1 | ShopOption10Counter$ShopOption10Clicks == 1) {
-      div(mainPanel(
-        h3("Trader has been clicked."),
-        actionButton("ShopOption5Reset", "Back To Shops")
       ))
     } else if (GoToTrainCounter$GoTraining == 1){
       div(mainPanel(
@@ -345,6 +303,11 @@ server <- function(input, output, session) {
       div(mainPanel(
         h3("Exploring has been clicked."),
         actionButton("BackToTown4", "Leave Exploring", class = "btn-link btn-lg")
+      ))
+    } else if (GoToBankCounter$GoBanking == 1){
+      div(mainPanel(
+        h3("Banking has been clicked."),
+        actionButton("BackToTown4", "Leave Banking", class = "btn-link btn-lg")
       ))
     }
     

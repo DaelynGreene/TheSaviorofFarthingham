@@ -6,7 +6,6 @@ ui<-fluidPage(
              HTML("#ShopOption2{color: #00d6d6; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
              HTML("#ShopOption3{color: #00d6d6; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
              HTML("#ShopOption4{color: #00d6d6; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
-             HTML("#ShopOption5{color: #00d6d6; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
              HTML("#BackToTown1{color: #ff8200; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
              HTML("#BackToTown2{color: #ff8200; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
              HTML("#BackToTown3{color: #ff8200; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
@@ -15,6 +14,7 @@ ui<-fluidPage(
              HTML("#GoToExploring{color: #ff8200; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
              HTML("#GoToTraining{color: #ff8200; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
              HTML("#GoToHealing{color: #ff8200; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
+             HTML("#GoToBanking{color: #ff8200; font-family: papyrus; font-weight: bolder; font-size: 30px}"),
             ),
   
   uiOutput("SaviorOfFarthingham")

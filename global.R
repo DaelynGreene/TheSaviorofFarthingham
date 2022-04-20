@@ -7,4 +7,9 @@ BackstoryText3<-"This is your story."
 
 TitleWords<-"The Savior of Farthingham"
 
-PlayerSaveData <- read.csv("PlayerSaveData.csv")
+if(file.exists("PlayerSaveData.csv")){
+  PlayerSaveData <- read.csv("PlayerSaveData.csv")
+  colnames(PlayerSaveData)[1] <- "Name"
+} else {
+  PlayerSaveData <- data.frame(seq(0,0,length.out = 60))
+}
