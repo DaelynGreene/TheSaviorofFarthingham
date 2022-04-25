@@ -43,22 +43,22 @@ server <- function(input, output, session) {
   observeEvent(input$GoToShopping, {
     GoToShopCounter$GoShopping <- 1
   })
-  
+
   GoToTrainCounter <- reactiveValues(GoTraining = 0)
   observeEvent(input$GoToTraining, {
     GoToTrainCounter$GoTraining <- 1
   })
-  
+
   GoToHealCounter <- reactiveValues(GoHealing = 0)
   observeEvent(input$GoToHealing, {
     GoToHealCounter$GoHealing <- 1
   })
-  
+
   GoToExploreCounter <- reactiveValues(GoExploring = 0)
   observeEvent(input$GoToExploring, {
     GoToExploreCounter$GoExploring <- 1
   })
-  
+
   GoToBankCounter <- reactiveValues(GoBanking = 0)
   observeEvent(input$GoToBanking, {
     GoToBankCounter$GoBanking <- 1
@@ -117,7 +117,7 @@ server <- function(input, output, session) {
     GoToExploreCounter$GoExploring <- 0
     GoToBankCounter$GoBanking <- 0
   })
-  
+
   observeEvent(input$BackToTown2, {
     GoToShopCounter$GoShopping <- 0
     GoToTrainCounter$GoTraining <- 0
@@ -125,7 +125,7 @@ server <- function(input, output, session) {
     GoToExploreCounter$GoExploring <- 0
     GoToBankCounter$GoBanking <- 0
   })
-  
+
   observeEvent(input$BackToTown3, {
     GoToShopCounter$GoShopping <- 0
     GoToTrainCounter$GoTraining <- 0
@@ -133,7 +133,7 @@ server <- function(input, output, session) {
     GoToExploreCounter$GoExploring <- 0
     GoToBankCounter$GoBanking <- 0
   })
-  
+
   observeEvent(input$BackToTown4, {
     GoToShopCounter$GoShopping <- 0
     GoToTrainCounter$GoTraining <- 0
@@ -141,7 +141,7 @@ server <- function(input, output, session) {
     GoToExploreCounter$GoExploring <- 0
     GoToBankCounter$GoBanking <- 0
   })
-  
+
   observeEvent(input$BackToTown5, {
     GoToShopCounter$GoShopping <- 0
     GoToTrainCounter$GoTraining <- 0
@@ -202,6 +202,7 @@ server <- function(input, output, session) {
     } else if (GoToShopCounter$GoShopping == 1 & ShopOption1Counter$ShopOption1Clicks == 0 & ShopOption2Counter$ShopOption2Clicks == 0 & ShopOption3Counter$ShopOption3Clicks == 0 & ShopOption4Counter$ShopOption4Clicks == 0 & ShopOption5Counter$ShopOption5Clicks == 0 & ShopOption6Counter$ShopOption6Clicks == 0 & ShopOption7Counter$ShopOption7Clicks == 0 & ShopOption8Counter$ShopOption8Clicks == 0) {
       div(mainPanel(
         width = 12,
+        br(),
         fluidRow(
           column(
             width = 6,
@@ -251,21 +252,17 @@ server <- function(input, output, session) {
             width = 6,
             align = "left",
             actionButton("ShopOption4b", "", class = "btn-link btn-lg", icon = icon("scale-balanced", verify_fa = FALSE))
-          ),
-          br(),
-          br(),
-          br(),
-          br(),
-          br(),
-          br(),
-          br(),
-          br(),
-          fluidRow(
-            column(
-              width = 12,
-              align = "center",
-              actionButton("BackToTown1", "Leave Shops", class = "btn-link btn-lg")
-            )
+          )
+        ),
+        br(),
+        br(),
+        br(),
+        br(),
+        fluidRow(
+          column(
+            width = 12,
+            align = "center",
+            actionButton("BackToTown1", "Leave Shops", class = "btn-link btn-lg")
           )
         )
       ))
@@ -289,33 +286,26 @@ server <- function(input, output, session) {
         h3("Tavern has been clicked."),
         actionButton("ShopOption4Reset", "Back To Shops")
       ))
-    } else if (GoToTrainCounter$GoTraining == 1){
+    } else if (GoToTrainCounter$GoTraining == 1) {
       div(mainPanel(
         h3("Training has been clicked."),
         actionButton("BackToTown2", "Leave Training", class = "btn-link btn-lg")
       ))
-    } else if (GoToHealCounter$GoHealing == 1){
+    } else if (GoToHealCounter$GoHealing == 1) {
       div(mainPanel(
         h3("Healing has been clicked."),
         actionButton("BackToTown3", "Leave Healing", class = "btn-link btn-lg")
       ))
-    } else if (GoToExploreCounter$GoExploring == 1){
+    } else if (GoToExploreCounter$GoExploring == 1) {
       div(mainPanel(
         h3("Exploring has been clicked."),
         actionButton("BackToTown4", "Leave Exploring", class = "btn-link btn-lg")
       ))
-    } else if (GoToBankCounter$GoBanking == 1){
+    } else if (GoToBankCounter$GoBanking == 1) {
       div(mainPanel(
         h3("Banking has been clicked."),
         actionButton("BackToTown4", "Leave Banking", class = "btn-link btn-lg")
       ))
     }
-    
-    
-    
-    
-    
-    
-    
   })
 }
