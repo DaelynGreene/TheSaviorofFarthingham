@@ -2,15 +2,15 @@ ui <- fluidPage(
   sliderInput("obs", "Number of observations:",
               min = 0, max = 1000, value = 500
   ),
-  textOutput("distPlot")
+  uiOutput("words")
 )
 
 # Server logic
 server <- function(input, output) {
   
-  observeEvent(input$obs,{if (input$obs <=800){output$distPlot <- renderText({
+  observeEvent(input$obs,{if (input$obs <=800){output$words <- renderText({
     (input$obs)
-  })} else {output$distPlot <- renderText({("TOO MUCH")})}})
+  })} else {output$words <- renderUI({h2("TOO MUCH",style = "color: red; font-family: papyrus; font-weight: bolder; font-size: 30px")})}})
   
   
 }
