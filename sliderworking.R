@@ -10,7 +10,7 @@ server <- function(input, output) {
   
   observeEvent(input$obs,{if (input$obs <=800){output$distPlot <- renderText({
     (input$obs)
-  })} else {output$distPlot <- renderText({print("TOO MUCH")})}})
+  })} else {output$distPlot <- renderText({("TOO MUCH")})}})
   
   
 }
