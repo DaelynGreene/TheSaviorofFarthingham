@@ -48,7 +48,7 @@ server <- function(input, output) {
         column(
           width = 6,
           align = "left",
-          actionButton("MaxHealth?", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
+          actionButton("MaxHealthQuestion", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
         )
       )
     })
@@ -73,7 +73,7 @@ server <- function(input, output) {
         column(
           width = 6,
           align = "left",
-          actionButton("Strength?", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
+          actionButton("StrengthQuestion", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
         )
       )
     })
@@ -98,7 +98,7 @@ server <- function(input, output) {
         column(
           width = 6,
           align = "left",
-          actionButton("Agility?", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
+          actionButton("AgilityQuestion", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
         )
       )
     })
@@ -123,7 +123,7 @@ server <- function(input, output) {
         column(
           width = 6,
           align = "left",
-          actionButton("Stealth?", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
+          actionButton("StealthQuestion", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
         )
       )
     })
@@ -148,7 +148,7 @@ server <- function(input, output) {
         column(
           width = 6,
           align = "left",
-          actionButton("Speed?", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
+          actionButton("SpeedQuestion", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
         )
       )
     })
@@ -173,7 +173,7 @@ server <- function(input, output) {
         column(
           width = 6,
           align = "left",
-          actionButton("Endurance?", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
+          actionButton("EnduranceQuestion", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
         )
       )
     })
@@ -198,7 +198,7 @@ server <- function(input, output) {
         column(
           width = 6,
           align = "left",
-          actionButton("Intelligence?", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
+          actionButton("IntelligenceQuestion", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
         )
       )
     })
@@ -225,7 +225,7 @@ server <- function(input, output) {
         column(
           width = 6,
           align = "left",
-          actionButton("Intelligence?", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
+          actionButton("MaxHealthQuestion", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
         )
       )
     })
@@ -246,7 +246,7 @@ server <- function(input, output) {
         column(
           width = 6,
           align = "left",
-          actionButton("Intelligence?", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
+          actionButton("StrengthQuestion", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
         )
       )
     })
@@ -267,7 +267,7 @@ server <- function(input, output) {
         column(
           width = 6,
           align = "left",
-          actionButton("Intelligence?", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
+          actionButton("AgilityQuestion", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
         )
       )
     })
@@ -288,7 +288,7 @@ server <- function(input, output) {
         column(
           width = 6,
           align = "left",
-          actionButton("Intelligence?", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
+          actionButton("StealthQuestion", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
         )
       )
     })
@@ -309,7 +309,7 @@ server <- function(input, output) {
         column(
           width = 6,
           align = "left",
-          actionButton("Intelligence?", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
+          actionButton("SpeedQuestion", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
         )
       )
     })
@@ -330,7 +330,7 @@ server <- function(input, output) {
         column(
           width = 6,
           align = "left",
-          actionButton("Intelligence?", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
+          actionButton("EnduranceQuestion", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
         )
       )
     })
@@ -351,14 +351,69 @@ server <- function(input, output) {
         column(
           width = 6,
           align = "left",
-          actionButton("Intelligence?", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
+          actionButton("IntelligenceQuestion", "", class = "btn-link btn-lg", icon = icon("circle-question", class = "fa-regular", verify_fa = FALSE))
         )
       )
     })
   })
+  
+  observeEvent(input$MaxHealthQuestion,{
+    showModal(modalDialog(
+        title = "Maximum Health Info",
+        div(
+          "Maximum Health is exactly what it sounds like. This stat controls how much damage you can take before you almost die (you're the hero of this story, you can't *die* die)."
+        )
+      ))
+  })
+  observeEvent(input$StrengthQuestion,{
+    showModal(modalDialog(
+      title = "Strength Info",
+      div(
+        "Strength."
+      )
+    ))
+  })
+  observeEvent(input$AgilityQuestion,{
+    showModal(modalDialog(
+      title = "Agility Info",
+      div(
+        "Agility."
+      )
+    ))
+  })
+  observeEvent(input$StealthQuestion,{
+    showModal(modalDialog(
+      title = "Stealth Info",
+      div(
+        "Stealth."
+      )
+    ))
+  })
+  observeEvent(input$SpeedQuestion,{
+    showModal(modalDialog(
+      title = "Speed Info",
+      div(
+        "Speed."
+      )
+    ))
+  })
+  observeEvent(input$EnduranceQuestion,{
+    showModal(modalDialog(
+      title = "Endurance Info",
+      div(
+        "Endurance."
+      )
+    ))
+  })
+  observeEvent(input$IntelligenceQuestion,{
+    showModal(modalDialog(
+      title = "Intelligence Info",
+      div(
+        "Intelligence."
+      )
+    ))
+  })
 }
-
-
 
 
 # tags$head(tags$style(HTML('.js-irs-0 .irs-single, .js-irs-0 .irs-bar-edge, .js-irs-0 .irs-bar {
@@ -370,26 +425,6 @@ server <- function(input, output) {
 #                            .irs-from, .irs-to, .irs-single { background: #000069 }'
 # ))
 # )
-
-
-#
-# showModal(modalDialog(
-#   title = "Important Message",
-#   div(
-#     "Your account worth after ", paste(input$years), "years is", paste0("$",round(NewAccountWorth,2))
-#   )
-# ))
-
-
-
-
-
-
-
-
-
-
-
 
 
 shinyApp(ui, server)
