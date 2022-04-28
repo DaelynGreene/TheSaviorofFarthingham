@@ -34,7 +34,7 @@ server <- function(input, output) {
           align = "right",
           sliderInput(
             "obs1",
-            paste("Maximum Health:", input$obs1),
+            paste("Maximum Health (CAN YOU CENTER THE TITLE OVER THE SLIDER?????):", input$obs1),
             min = 0,
             max = min(10, 25 - sum(input$obs2, input$obs3, input$obs4, input$obs5, input$obs6, input$obs7)),
             value = if (is.null(input$obs1)) {
@@ -215,7 +215,7 @@ server <- function(input, output) {
           align = "right",
           sliderInput(
             "obs1",
-            paste("Maximum Health:", input$obs1),
+            paste("Maximum Health (CAN YOU CENTER THE TITLE OVER THE SLIDER?????):", input$obs1),
             min = 0,
             max = Numbers[1],
             value = Numbers[1],
