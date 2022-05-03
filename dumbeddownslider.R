@@ -4,7 +4,10 @@ ui <- fluidPage(
   uiOutput("sliders1"),
   tags$style(
     "@import url(https://use.fontawesome.com/releases/v6.1.1/css/all.css);",
-    HTML(".fa{font-size: 25px; color:#000000; align-middle}")
+    HTML(".fa{font-size: 25px; color:#000000; align-middle}"),
+    HTML(".shiny-input-container{
+    text-align: center;
+}")
   )
 )
 server <- function(input, output) {

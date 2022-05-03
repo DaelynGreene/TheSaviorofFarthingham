@@ -20,7 +20,7 @@ NumberTest3 <- reactiveVal(0)
 NumberTest4 <- reactiveVal(0)
 
 observe({
-    invalidateLater(100,session)
+    invalidateLater(250,session)
     isolate({
       NumberTest(NumberTest()+1)
       if(as.numeric(NumberTest())==60){
