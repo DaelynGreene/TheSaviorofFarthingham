@@ -15,6 +15,7 @@ NumberTest <- reactiveVal(0)
 NumberTest2 <- reactiveVal(1)
 NumberTest3 <- reactiveVal(0)
 NumberTest4 <- reactiveVal(0)
+NumberTest5 <- reactiveVal("am")
 
 observe({
     invalidateLater(250,session)
@@ -26,9 +27,22 @@ observe({
       }
       if(as.numeric(NumberTest2()==24)){
         NumberTest3(NumberTest3()+1)
-        NumberTest2(0)
+        NumberTest2(1)
+        NumberTest5("am")
+      }
+      if(as.numeric(NumberTest2()) == 12){
+        NumberTest5("pm")
       }
     })
+})
+
+observe({
+  invalidateLater(250,session)
+  isolate({
+    if(as.numeric(NumberTest2()) == 12){
+      NumberTest5("pm")
+    }
+  })
 })
 
 observe({
@@ -39,7 +53,7 @@ observe({
 })
 
 output$currentNumber <- renderText({
-  paste(NumberTest(),NumberTest2(),NumberTest3(),NumberTest4())
+  paste(NumberTest(),NumberTest2(),NumberTest3(),NumberTest4(),NumberTest5())
   })
 
 }
