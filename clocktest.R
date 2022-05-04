@@ -1,6 +1,7 @@
 library(shiny)
 library(shinyWidgets)
 library(lubridate)
+
 ui <- fluidPage(
   textOutput("currentNumber")
 )
@@ -10,12 +11,8 @@ ui <- fluidPage(
 # Server logic
 server <- function(input, output, session) {
   
-  
-
-
-
 NumberTest <- reactiveVal(0)
-NumberTest2 <- reactiveVal(0)
+NumberTest2 <- reactiveVal(1)
 NumberTest3 <- reactiveVal(0)
 NumberTest4 <- reactiveVal(0)
 
@@ -41,12 +38,9 @@ observe({
   })
 })
 
-
 output$currentNumber <- renderText({
   paste(NumberTest(),NumberTest2(),NumberTest3(),NumberTest4())
   })
 
 }
 shinyApp(ui, server)
-
-
