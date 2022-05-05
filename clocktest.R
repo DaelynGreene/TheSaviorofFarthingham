@@ -6,9 +6,6 @@ ui <- fluidPage(
   textOutput("currentNumber")
 )
 
-######### with current setup one in-game day is 161 seconds real time
-
-# Server logic
 server <- function(input, output, session) {
   
 NumberTest <- reactiveVal(0)
@@ -36,24 +33,8 @@ observe({
     })
 })
 
-observe({
-  invalidateLater(250,session)
-  isolate({
-    if(as.numeric(NumberTest2()) == 12){
-      NumberTest5("pm")
-    }
-  })
-})
-
-observe({
-  invalidateLater(1000,session)
-  isolate({
-    NumberTest4(NumberTest4()+1)
-  })
-})
-
 output$currentNumber <- renderText({
-  paste(NumberTest(),NumberTest2(),NumberTest3(),NumberTest4(),NumberTest5())
+  paste(NumberTest(),NumberTest2(),NumberTest3(),NumberTest5())
   })
 
 }

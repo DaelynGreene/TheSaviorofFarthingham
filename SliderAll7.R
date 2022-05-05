@@ -11,8 +11,7 @@ ui <- fluidPage(
   uiOutput("button"),
   tags$style(
     "@import url(https://use.fontawesome.com/releases/v6.1.1/css/all.css);",
-    HTML(".fa{font-size: 25px; color:#000000; align-middle}"),
-    HTML(".shiny-input-container{text-align: center}")
+    HTML(".fa{font-size: 25px; color:#000000; align-middle}")
   )
 )
 server <- function(input, output) {
@@ -216,7 +215,7 @@ server <- function(input, output) {
           align = "right",
           sliderInput(
             "obs1",
-            paste("Maximum Health (CAN YOU CENTER THE TITLE OVER THE SLIDER?????):", input$obs1),
+            paste("Maximum Health:", input$obs1),
             min = 0,
             max = Numbers[1],
             value = Numbers[1],
