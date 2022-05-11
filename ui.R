@@ -19,5 +19,4 @@ ui<-fluidPage(
   
   uiOutput("SaviorOfFarthingham")
   
-  
   )
