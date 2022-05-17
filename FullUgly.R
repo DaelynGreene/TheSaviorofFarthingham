@@ -9,10 +9,30 @@ ui <- fluidPage(
   uiOutput("sliders6"),
   uiOutput("sliders7"),
   uiOutput("button"),
+  
+  
+  
   tags$style(
+    
+    
+    
     "@import url(https://use.fontawesome.com/releases/v6.1.1/css/all.css);",
-    HTML(".fa{font-size: 25px; color:#000000; align-middle}")
+    HTML(".fa{font-size: 25px; color:#000000; align-middle}"),
+    HTML(".modal{text-align:center}"),
+    HTML("#button1{border:none}"),
+    HTML("#button2{border:none}"),
+    HTML("#button3{border:none}"),
+    HTML("#button4{border:none}"),
+    HTML("#button5{border:none}"),
+    HTML("#button6{border:none}"),
+    HTML("#button7{border:none}")
+    
+    
+    
   )
+  
+  
+  
 )
 server <- function(input, output) {
   output$button <- renderUI({
@@ -361,70 +381,90 @@ server <- function(input, output) {
     showModal(modalDialog(
         title = "Maximum Health Info",
         div(
-          "Maximum Health is exactly what it sounds like. This stat controls how much damage you can take before you almost die (you're the hero of this story, you can't *die* die)."
-        )
+          "Maximum Health is exactly what it sounds like. This stat controls how much damage you can take before you almost die (you're the hero of this story, you can't *die* die).",
+          align = "center"
+        ),
+        footer = actionButton("button1","",icon = icon("thumbs-up"))
       ))
   })
   observeEvent(input$StrengthQuestion,{
     showModal(modalDialog(
       title = "Strength Info",
       div(
-        "Strength."
-      )
+        "Strength determines the amount of things you can carry without being slowed down. Every item has a weight (this isn't some fantasy world); once you clear your strength limit you start to slow down. \"How much do I slow down?\" you're probably asking yourself. Well... don't ask me. I don’t know how the universe works or why it works how it works, all I know is the more crap you carry the slower you go."
+      ),
+      footer = actionButton("button2","",icon = icon("thumbs-up"))
     ))
   })
   observeEvent(input$AgilityQuestion,{
     showModal(modalDialog(
       title = "Agility Info",
       div(
-        "Agility."
-      )
+        "Agility determines the likelihood that you successfully dodge an attack. Starting out, you're clumsier than a drunk, but with lots of training, you can grow to become proficient and, eventually, quite skilled."
+      ),
+      footer = actionButton("button3","",icon = icon("thumbs-up"))
     ))
   })
   observeEvent(input$StealthQuestion,{
     showModal(modalDialog(
       title = "Stealth Info",
       div(
-        "Stealth."
-      )
+        "Stealth determines the strength of and likelihood that you can successfully launch an ambush or a sneaky first-strike. The first bird may get the worm, but the second mouse gets the cheese. Sometimes it's better to stay in hiding until the action is over."
+      ),
+      footer = actionButton("button4","",icon = icon("thumbs-up"))
     ))
   })
   observeEvent(input$SpeedQuestion,{
     showModal(modalDialog(
       title = "Speed Info",
       div(
-        "Speed."
-      )
+        "Speed determines how fast you can move while exploring the lands of Farthingham."
+      ),
+      footer = actionButton("button5","",icon = icon("thumbs-up"))
     ))
   })
   observeEvent(input$EnduranceQuestion,{
     showModal(modalDialog(
       title = "Endurance Info",
       div(
-        "Endurance."
-      )
+        "Endurance determines the amount of actions you can perform without having to rest or eat/use a potion (in combat and in exploration). Endurance also impacts how long you can go without food or water."
+      ),
+      footer = actionButton("button6","",icon = icon("thumbs-up"))
     ))
   })
   observeEvent(input$IntelligenceQuestion,{
     showModal(modalDialog(
       title = "Intelligence Info",
       div(
-        "Intelligence."
-      )
+        "Intelligence impacts the prices you pay at stores or traders and, in special circumstances, different conversation options you can have. The lower your intelligence, the more likely shopkeeps are to try to take advantage of you. The higher your intelligence, the more pretentiously bombastic your verbiage will become."
+      ),
+      footer = actionButton("button7","",icon = icon("thumbs-up"))
     ))
   })
+  observeEvent(input$button1,{
+    removeModal()
+  })
+  observeEvent(input$button2,{
+    removeModal()
+  })
+  observeEvent(input$button3,{
+    removeModal()
+  })
+  observeEvent(input$button4,{
+    removeModal()
+  })
+  observeEvent(input$button5,{
+    removeModal()
+  })
+  observeEvent(input$button6,{
+    removeModal()
+  })
+  observeEvent(input$button7,{
+    removeModal()
+  })
+  observeEvent(input$button7,{
+    removeModal()
+  })
 }
-
-
-# tags$head(tags$style(HTML('.js-irs-0 .irs-single, .js-irs-0 .irs-bar-edge, .js-irs-0 .irs-bar {
-#                                                   background: #000069;
-#                                                   border-top: 1px solid #000039 ;
-#                                                   border-bottom: 1px solid #000039 ;}
-#
-#                             /* changes the colour of the number tags */
-#                            .irs-from, .irs-to, .irs-single { background: #000069 }'
-# ))
-# )
-
 
 shinyApp(ui, server)
