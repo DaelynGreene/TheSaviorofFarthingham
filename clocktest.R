@@ -3,6 +3,7 @@ library(shinyWidgets)
 library(lubridate)
 
 ui <- fluidPage(
+  textOutput("words"),
   textOutput("currentNumber")
 )
 
@@ -11,19 +12,19 @@ server <- function(input, output, session) {
 MinutesGoneBy<- reactiveVal(50)
 HourOfDay <- reactiveVal(5)
 DaysElapsed <- reactiveVal(1)
-NumberOfHours24 <- reactiveVal(17)
 Switch <- reactiveVal(1)
 AmPmToggle <- reactiveVal("pm")
+HourTracker <- reactiveVal(17)
 
 
 observe({
-  invalidateLater(25,session)
+  invalidateLater(5,session)
   isolate({
     MinutesGoneBy(MinutesGoneBy()+1)
     if(as.numeric(MinutesGoneBy())==60){
       MinutesGoneBy(0)
-      NumberOfHours24(NumberOfHours24()+1)
       HourOfDay(HourOfDay()+1)
+      HourTracker(HourTracker()+1)
     }
     if(as.numeric(HourOfDay()) == 13){
       MinutesGoneBy(0)
@@ -37,11 +38,17 @@ observe({
     } else {
       AmPmToggle("pm")
     }
+    if (as.numeric(HourTracker()) == 24) {
+      HourTracker(0)
+      DaysElapsed(DaysElapsed()+1)
+    }
   })
 })
 
+output$words <- renderText({paste("hour","minute","day")})
+
 output$currentNumber <- renderText({
-  paste(HourOfDay(),MinutesGoneBy(),AmPmToggle(),NumberOfHours24(),Switch())
+  paste(HourOfDay(),MinutesGoneBy(),AmPmToggle(),DaysElapsed())
   })
 
 }
