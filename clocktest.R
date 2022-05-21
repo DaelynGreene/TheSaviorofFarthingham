@@ -4,10 +4,47 @@ library(lubridate)
 
 ui <- fluidPage(
   textOutput("words"),
-  textOutput("currentNumber")
+  textOutput("DateTime"),
+  uiOutput("stuff")
 )
 
 server <- function(input, output, session) {
+  
+  ClickCounter <- reactiveVal(0)
+  observeEvent(input$click, {
+    ClickCounter(1)
+  })
+  
+  observeEvent(input$clickreset, {
+    ClickCounter(0)
+  })
+  
+  output$stuff <- renderUI({
+    
+    if (as.numeric(ClickCounter()) == 0) {
+      mainPanel(
+        width = 12,
+        fluidRow(
+          column(
+            width = 12,
+            align = "center",
+            actionButton("click", "click", class = "btn-link btn-lg", style = "padding:24px;")
+            )
+        )
+      )
+    } else {
+      mainPanel(
+        width = 12,
+        fluidRow(
+          column(
+            width = 12,
+            align = "center",
+            actionButton("clickreset", "clickreset", class = "btn-link btn-lg", style = "padding:24px;")
+          )
+        )
+      )
+      }
+    })
   
 MinutesGoneBy<- reactiveVal(50)
 HourOfDay <- reactiveVal(5)
@@ -16,9 +53,9 @@ Switch <- reactiveVal(1)
 AmPmToggle <- reactiveVal("pm")
 HourTracker <- reactiveVal(17)
 
-
 observe({
-  invalidateLater(5,session)
+  if (as.numeric(ClickCounter()) == 0) {
+  invalidateLater(25,session)
   isolate({
     MinutesGoneBy(MinutesGoneBy()+1)
     if(as.numeric(MinutesGoneBy())==60){
@@ -42,14 +79,20 @@ observe({
       HourTracker(0)
       DaysElapsed(DaysElapsed()+1)
     }
+    if(nchar(MinutesGoneBy()) == 2){
+    output$DateTime <- renderText({
+      paste0(HourOfDay(),":",MinutesGoneBy(),"  ",AmPmToggle(),"  ",DaysElapsed())
+    })
+    } else {
+      output$DateTime <- renderText({
+        paste0(HourOfDay(),":",0,MinutesGoneBy(),"  ",AmPmToggle(),"  ",DaysElapsed())
+      })
+    }
   })
+  }
 })
 
-output$words <- renderText({paste("hour","minute","day")})
 
-output$currentNumber <- renderText({
-  paste(HourOfDay(),MinutesGoneBy(),AmPmToggle(),DaysElapsed())
-  })
 
 }
 shinyApp(ui, server)
