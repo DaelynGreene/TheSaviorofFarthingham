@@ -55,7 +55,7 @@ HourTracker <- reactiveVal(17)
 
 observe({
   if (as.numeric(ClickCounter()) == 0) {
-  invalidateLater(25,session)
+  invalidateLater(250,session)
   isolate({
     MinutesGoneBy(MinutesGoneBy()+1)
     if(as.numeric(MinutesGoneBy())==60){

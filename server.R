@@ -1,166 +1,209 @@
 server <- function(input, output, session) {
-  ShopOption1Counter <- reactiveValues(ShopOption1Clicks = 0)
-  observeEvent(input$ShopOption1, {
-    ShopOption1Counter$ShopOption1Clicks <- 1
+  AlchemistW <- reactiveVal(0)
+  observeEvent(input$AlchemistWord, {
+    AlchemistW(1)
   })
 
-  ShopOption2Counter <- reactiveValues(ShopOption2Clicks = 0)
-  observeEvent(input$ShopOption1b, {
-    ShopOption2Counter$ShopOption2Clicks <- 1
+  AlchemistFA <- reactiveVal(0)
+  observeEvent(input$AlchemistFAwe, {
+    AlchemistFA(1)
   })
 
-  ShopOption3Counter <- reactiveValues(ShopOption3Clicks = 0)
-  observeEvent(input$ShopOption2, {
-    ShopOption3Counter$ShopOption3Clicks <- 1
+  FarrierW <- reactiveVal(0)
+  observeEvent(input$FarrierWord, {
+    FarrierW(1)
   })
 
-  ShopOption4Counter <- reactiveValues(ShopOption4Clicks = 0)
-  observeEvent(input$ShopOption2b, {
-    ShopOption4Counter$ShopOption4Clicks <- 1
+  FarrierFA <- reactiveVal(0)
+  observeEvent(input$FarrierFAwe, {
+    FarrierFA(1)
   })
 
-  ShopOption5Counter <- reactiveValues(ShopOption5Clicks = 0)
-  observeEvent(input$ShopOption3, {
-    ShopOption5Counter$ShopOption5Clicks <- 1
+  TavernW <- reactiveVal(0)
+  observeEvent(input$TavernWord, {
+    TavernW(1)
   })
 
-  ShopOption6Counter <- reactiveValues(ShopOption6Clicks = 0)
-  observeEvent(input$ShopOption3b, {
-    ShopOption6Counter$ShopOption6Clicks <- 1
+  TavernFA <- reactiveVal(0)
+  observeEvent(input$TavernFAwe, {
+    TavernFA(1)
   })
 
-  ShopOption7Counter <- reactiveValues(ShopOption7Clicks = 0)
-  observeEvent(input$ShopOption4, {
-    ShopOption7Counter$ShopOption7Clicks <- 1
+  TraderW <- reactiveVal(0)
+  observeEvent(input$TraderWord, {
+    TraderW(1)
   })
 
-  ShopOption8Counter <- reactiveValues(ShopOption8Clicks = 0)
-  observeEvent(input$ShopOption4b, {
-    ShopOption8Counter$ShopOption8Clicks <- 1
+  TraderFA <- reactiveVal(0)
+  observeEvent(input$TraderFAwe, {
+    TraderFA(1)
   })
 
-  GoToShopCounter <- reactiveValues(GoShopping = 0)
+  GoToShopCounter <- reactiveVal(0)
   observeEvent(input$GoToShopping, {
-    GoToShopCounter$GoShopping <- 1
+    GoToShopCounter(1)
   })
 
-  GoToTrainCounter <- reactiveValues(GoTraining = 0)
+  GoToTrainCounter <- reactiveVal(0)
   observeEvent(input$GoToTraining, {
-    GoToTrainCounter$GoTraining <- 1
+    GoToTrainCounter(1)
   })
 
-  GoToHealCounter <- reactiveValues(GoHealing = 0)
+  GoToHealCounter <- reactiveVal(0)
   observeEvent(input$GoToHealing, {
-    GoToHealCounter$GoHealing <- 1
+    GoToHealCounter(1)
   })
 
-  GoToExploreCounter <- reactiveValues(GoExploring = 0)
+  GoToExploreCounter <- reactiveVal(0)
   observeEvent(input$GoToExploring, {
-    GoToExploreCounter$GoExploring <- 1
+    GoToExploreCounter(1)
   })
 
-  GoToBankCounter <- reactiveValues(GoBanking = 0)
+  GoToBankCounter <- reactiveVal(0)
   observeEvent(input$GoToBanking, {
-    GoToBankCounter$GoBanking <- 1
+    GoToBankCounter(1)
   })
 
 
 
-  observeEvent(input$ShopOption1Reset, {
-    ShopOption1Counter$ShopOption1Clicks <- 0
-    ShopOption2Counter$ShopOption2Clicks <- 0
-    ShopOption3Counter$ShopOption3Clicks <- 0
-    ShopOption4Counter$ShopOption4Clicks <- 0
-    ShopOption5Counter$ShopOption5Clicks <- 0
-    ShopOption6Counter$ShopOption6Clicks <- 0
-    ShopOption7Counter$ShopOption7Clicks <- 0
-    ShopOption8Counter$ShopOption8Clicks <- 0
+  observeEvent(input$AlchemistReset, {
+    AlchemistW(0)
+    AlchemistFA(0)
+    FarrierW(0)
+    FarrierFA(0)
+    TavernW(0)
+    TavernFA(0)
+    TraderW(0)
+    TraderFA(0)
   })
 
-  observeEvent(input$ShopOption2Reset, {
-    ShopOption1Counter$ShopOption1Clicks <- 0
-    ShopOption2Counter$ShopOption2Clicks <- 0
-    ShopOption3Counter$ShopOption3Clicks <- 0
-    ShopOption4Counter$ShopOption4Clicks <- 0
-    ShopOption5Counter$ShopOption5Clicks <- 0
-    ShopOption6Counter$ShopOption6Clicks <- 0
-    ShopOption7Counter$ShopOption7Clicks <- 0
-    ShopOption8Counter$ShopOption8Clicks <- 0
+  observeEvent(input$FarrierReset, {
+    AlchemistW(0)
+    AlchemistFA(0)
+    FarrierW(0)
+    FarrierFA(0)
+    TavernW(0)
+    TavernFA(0)
+    TraderW(0)
+    TraderFA(0)
   })
 
-  observeEvent(input$ShopOption3Reset, {
-    ShopOption1Counter$ShopOption1Clicks <- 0
-    ShopOption2Counter$ShopOption2Clicks <- 0
-    ShopOption3Counter$ShopOption3Clicks <- 0
-    ShopOption4Counter$ShopOption4Clicks <- 0
-    ShopOption5Counter$ShopOption5Clicks <- 0
-    ShopOption6Counter$ShopOption6Clicks <- 0
-    ShopOption7Counter$ShopOption7Clicks <- 0
-    ShopOption8Counter$ShopOption8Clicks <- 0
+  observeEvent(input$TavernReset, {
+    AlchemistW(0)
+    AlchemistFA(0)
+    FarrierW(0)
+    FarrierFA(0)
+    TavernW(0)
+    TavernFA(0)
+    TraderW(0)
+    TraderFA(0)
   })
 
-  observeEvent(input$ShopOption4Reset, {
-    ShopOption1Counter$ShopOption1Clicks <- 0
-    ShopOption2Counter$ShopOption2Clicks <- 0
-    ShopOption3Counter$ShopOption3Clicks <- 0
-    ShopOption4Counter$ShopOption4Clicks <- 0
-    ShopOption5Counter$ShopOption5Clicks <- 0
-    ShopOption6Counter$ShopOption6Clicks <- 0
-    ShopOption7Counter$ShopOption7Clicks <- 0
-    ShopOption8Counter$ShopOption8Clicks <- 0
+  observeEvent(input$TraderReset, {
+    AlchemistW(0)
+    AlchemistFA(0)
+    FarrierW(0)
+    FarrierFA(0)
+    TavernW(0)
+    TavernFA(0)
+    TraderW(0)
+    TraderFA(0)
   })
 
   observeEvent(input$BackToTown1, {
-    GoToShopCounter$GoShopping <- 0
-    GoToTrainCounter$GoTraining <- 0
-    GoToHealCounter$GoHealing <- 0
-    GoToExploreCounter$GoExploring <- 0
-    GoToBankCounter$GoBanking <- 0
+    GoToShopCounter(0)
+    GoToTrainCounter(0)
+    GoToHealCounter(0)
+    GoToExploreCounter(0)
+    GoToBankCounter(0)
   })
 
   observeEvent(input$BackToTown2, {
-    GoToShopCounter$GoShopping <- 0
-    GoToTrainCounter$GoTraining <- 0
-    GoToHealCounter$GoHealing <- 0
-    GoToExploreCounter$GoExploring <- 0
-    GoToBankCounter$GoBanking <- 0
+    GoToShopCounter(0)
+    GoToTrainCounter(0)
+    GoToHealCounter(0)
+    GoToExploreCounter(0)
+    GoToBankCounter(0)
   })
 
   observeEvent(input$BackToTown3, {
-    GoToShopCounter$GoShopping <- 0
-    GoToTrainCounter$GoTraining <- 0
-    GoToHealCounter$GoHealing <- 0
-    GoToExploreCounter$GoExploring <- 0
-    GoToBankCounter$GoBanking <- 0
+    GoToShopCounter(0)
+    GoToTrainCounter(0)
+    GoToHealCounter(0)
+    GoToExploreCounter(0)
+    GoToBankCounter(0)
   })
 
   observeEvent(input$BackToTown4, {
-    GoToShopCounter$GoShopping <- 0
-    GoToTrainCounter$GoTraining <- 0
-    GoToHealCounter$GoHealing <- 0
-    GoToExploreCounter$GoExploring <- 0
-    GoToBankCounter$GoBanking <- 0
+    GoToShopCounter(0)
+    GoToTrainCounter(0)
+    GoToHealCounter(0)
+    GoToExploreCounter(0)
+    GoToBankCounter(0)
   })
 
   observeEvent(input$BackToTown5, {
-    GoToShopCounter$GoShopping <- 0
-    GoToTrainCounter$GoTraining <- 0
-    GoToHealCounter$GoHealing <- 0
-    GoToExploreCounter$GoExploring <- 0
-    GoToBankCounter$GoBanking <- 0
+    GoToShopCounter(0)
+    GoToTrainCounter(0)
+    GoToHealCounter(0)
+    GoToExploreCounter(0)
+    GoToBankCounter(0)
   })
 
-
-
+  MinutesGoneBy<- reactiveVal(50)
+  HourOfDay <- reactiveVal(5)
+  DaysElapsed <- reactiveVal(1)
+  Switch <- reactiveVal(1)
+  AmPmToggle <- reactiveVal("pm")
+  HourTracker <- reactiveVal(17)
+  
+  observe({
+    invalidateLater(25,session)
+    isolate({
+      MinutesGoneBy(MinutesGoneBy()+1)
+      if(as.numeric(MinutesGoneBy())==60){
+        MinutesGoneBy(0)
+        HourOfDay(HourOfDay()+1)
+        HourTracker(HourTracker()+1)
+      }
+      if(as.numeric(HourOfDay()) == 13){
+        MinutesGoneBy(0)
+        HourOfDay(1)
+      }
+      if (as.numeric(HourOfDay()) == 12 & as.numeric(MinutesGoneBy()) == 0) {
+        Switch(Switch()+1)
+      }
+      if(as.numeric(Switch()) %% 2 == 0){
+        AmPmToggle("am")
+      } else {
+        AmPmToggle("pm")
+      }
+      if (as.numeric(HourTracker()) == 24) {
+        HourTracker(0)
+        DaysElapsed(DaysElapsed()+1)
+      }
+      
+      if(nchar(MinutesGoneBy()) == 2){
+        output$DateTime <- renderText({
+          paste0(HourOfDay(),":",MinutesGoneBy(),"  ",AmPmToggle(),"  ",DaysElapsed())
+        })
+      } else {
+        output$DateTime <- renderText({
+          paste0(HourOfDay(),":",0,MinutesGoneBy(),"  ",AmPmToggle(),"  ",DaysElapsed())
+        })
+      }
+    })
+  })
+  
   output$SaviorOfFarthingham <- renderUI({
-    if (GoToShopCounter$GoShopping == 0 & GoToHealCounter$GoHealing == 0 & GoToTrainCounter$GoTraining == 0 & GoToExploreCounter$GoExploring == 0 & GoToBankCounter$GoBanking == 0) {
+    if (as.numeric(GoToShopCounter()) == 0 & as.numeric(GoToHealCounter()) == 0 & as.numeric(GoToTrainCounter()) == 0 & as.numeric(GoToExploreCounter()) == 0 & as.numeric(GoToBankCounter()) == 0) {
       div(mainPanel(
         width = 12,
         fluidRow(
           column(
             width = 12,
             align = "center",
-            h2("Welcome to Farthingham", style = "color: red; font-family: papyrus; font-weight: bolder; font-size: 30px")
+            h2("Welcome to Farthingham", style = "color: #00ff00; font-family: papyrus; font-weight: bolder; font-size: 30px")
           )
         ),
         fluidRow(
@@ -199,7 +242,7 @@ server <- function(input, output, session) {
           )
         )
       ))
-    } else if (GoToShopCounter$GoShopping == 1 & ShopOption1Counter$ShopOption1Clicks == 0 & ShopOption2Counter$ShopOption2Clicks == 0 & ShopOption3Counter$ShopOption3Clicks == 0 & ShopOption4Counter$ShopOption4Clicks == 0 & ShopOption5Counter$ShopOption5Clicks == 0 & ShopOption6Counter$ShopOption6Clicks == 0 & ShopOption7Counter$ShopOption7Clicks == 0 & ShopOption8Counter$ShopOption8Clicks == 0) {
+    } else if (as.numeric(GoToShopCounter()) == 1 & as.numeric(AlchemistW()) == 0 & as.numeric(AlchemistFA()) == 0 & as.numeric(FarrierW()) == 0 & as.numeric(FarrierFA()) == 0 & as.numeric(TavernW()) == 0 & as.numeric(TavernFA()) == 0 & as.numeric(TraderW()) == 0 & as.numeric(TraderFA()) == 0) {
       div(mainPanel(
         width = 12,
         br(),
@@ -207,12 +250,12 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("ShopOption1", "Alchemist", class = "btn-link btn-lg", style = "padding:24px;")
+            actionButton("AlchemistWord", "Alchemist", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
             align = "left",
-            actionButton("ShopOption1b", "", class = "btn-link btn-lg", icon = icon("mortar-pestle", verify_fa = FALSE))
+            actionButton("AlchemistFAwe", "", class = "btn-link btn-lg", icon = icon("mortar-pestle", verify_fa = FALSE))
           )
         ),
         br(),
@@ -220,12 +263,12 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("ShopOption2", "Farrier", class = "btn-link btn-lg", style = "padding:24px;")
+            actionButton("FarrierWord", "Farrier", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
             align = "left",
-            actionButton("ShopOption2b", "", class = "btn-link btn-lg", icon = icon("horse", verify_fa = FALSE))
+            actionButton("FarrierFAwe", "", class = "btn-link btn-lg", icon = icon("horse", verify_fa = FALSE))
           )
         ),
         br(),
@@ -233,12 +276,12 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("ShopOption3", "Tavern", class = "btn-link btn-lg", style = "padding:24px;")
+            actionButton("TavernWord", "Tavern", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
             align = "left",
-            actionButton("ShopOption3b", "", class = "btn-link btn-lg", icon = icon("beer-mug-empty", verify_fa = FALSE))
+            actionButton("TavernFAwe", "", class = "btn-link btn-lg", icon = icon("beer-mug-empty", verify_fa = FALSE))
           )
         ),
         br(),
@@ -246,12 +289,12 @@ server <- function(input, output, session) {
           column(
             width = 6,
             align = "right",
-            actionButton("ShopOption4", "Trader", class = "btn-link btn-lg", style = "padding:24px;")
+            actionButton("TraderWord", "Trader", class = "btn-link btn-lg", style = "padding:24px;")
           ),
           column(
             width = 6,
             align = "left",
-            actionButton("ShopOption4b", "", class = "btn-link btn-lg", icon = icon("scale-balanced", verify_fa = FALSE))
+            actionButton("TraderFAwe", "", class = "btn-link btn-lg", icon = icon("scale-balanced", verify_fa = FALSE))
           )
         ),
         br(),
@@ -266,42 +309,42 @@ server <- function(input, output, session) {
           )
         )
       ))
-    } else if (ShopOption1Counter$ShopOption1Clicks == 1 | ShopOption2Counter$ShopOption2Clicks == 1) {
+    } else if (as.numeric(AlchemistW()) == 1 | as.numeric(AlchemistFA()) == 1) {
       div(mainPanel(
         h3("Alchemist has been clicked."),
-        actionButton("ShopOption1Reset", "Back To Shops")
+        actionButton("AlchemistReset", "Back To Shops")
       ))
-    } else if (ShopOption3Counter$ShopOption3Clicks == 1 | ShopOption4Counter$ShopOption4Clicks == 1) {
-      div(mainPanel(
-        h3("Bank has been clicked."),
-        actionButton("ShopOption2Reset", "Back To Shops")
-      ))
-    } else if (ShopOption5Counter$ShopOption5Clicks == 1 | ShopOption6Counter$ShopOption6Clicks == 1) {
+    } else if (as.numeric(FarrierW()) == 1 | as.numeric(FarrierFA()) == 1) {
       div(mainPanel(
         h3("Farrier has been clicked."),
-        actionButton("ShopOption3Reset", "Back To Shops")
+        actionButton("FarrierReset", "Back To Shops")
       ))
-    } else if (ShopOption7Counter$ShopOption7Clicks == 1 | ShopOption8Counter$ShopOption8Clicks == 1) {
+    } else if (as.numeric(TavernW()) == 1 | as.numeric(TavernFA()) == 1) {
       div(mainPanel(
         h3("Tavern has been clicked."),
-        actionButton("ShopOption4Reset", "Back To Shops")
+        actionButton("TavernReset", "Back To Shops")
       ))
-    } else if (GoToTrainCounter$GoTraining == 1) {
+    } else if (as.numeric(TraderW()) == 1 | as.numeric(TraderFA()) == 1) {
+      div(mainPanel(
+        h3("Trader has been clicked."),
+        actionButton("TraderReset", "Back To Shops")
+      ))
+    } else if (as.numeric(GoToTrainCounter()) == 1) {
       div(mainPanel(
         h3("Training has been clicked."),
         actionButton("BackToTown2", "Leave Training", class = "btn-link btn-lg")
       ))
-    } else if (GoToHealCounter$GoHealing == 1) {
+    } else if (as.numeric(GoToHealCounter()) == 1) {
       div(mainPanel(
         h3("Healing has been clicked."),
         actionButton("BackToTown3", "Leave Healing", class = "btn-link btn-lg")
       ))
-    } else if (GoToExploreCounter$GoExploring == 1) {
+    } else if (as.numeric(GoToExploreCounter()) == 1) {
       div(mainPanel(
         h3("Exploring has been clicked."),
         actionButton("BackToTown4", "Leave Exploring", class = "btn-link btn-lg")
       ))
-    } else if (GoToBankCounter$GoBanking == 1) {
+    } else if (as.numeric(GoToBankCounter()) == 1) {
       div(mainPanel(
         h3("Banking has been clicked."),
         actionButton("BackToTown4", "Leave Banking", class = "btn-link btn-lg")
