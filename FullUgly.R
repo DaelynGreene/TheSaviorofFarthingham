@@ -1,6 +1,7 @@
 library(shiny)
 library(shinyWidgets)
 ui <- fluidPage(
+  uiOutput("characterdescription"),
   uiOutput("sliders1"),
   uiOutput("sliders2"),
   uiOutput("sliders3"),
@@ -9,7 +10,6 @@ ui <- fluidPage(
   uiOutput("sliders6"),
   uiOutput("sliders7"),
   uiOutput("button"),
-  
   
   
   tags$style(
@@ -34,6 +34,10 @@ ui <- fluidPage(
   
   
 )
+
+
+
+
 server <- function(input, output) {
   output$button <- renderUI({
     fluidRow({
@@ -41,7 +45,7 @@ server <- function(input, output) {
         width = 12,
         align = "center",
         h4(paste(25 - sum(input$obs1, input$obs2, input$obs3, input$obs4, input$obs5, input$obs6, input$obs7), "skill points remaining.")),
-        actionButton("AdamsRandomize", "Randomize")
+        actionButton("AdamsRandomizeHTPetrie", "Randomize")
       )
     })
   })
@@ -223,7 +227,7 @@ server <- function(input, output) {
       )
     })
   })
-  observeEvent(input$AdamsRandomize, {
+  observeEvent(input$AdamsRandomizeHTPetrie, {
     Numbers <- sample(0:10, 7, replace = T)
     while (sum(Numbers) != 25) {
       Numbers <- sample(0:10, 7, replace = T)
@@ -400,7 +404,7 @@ server <- function(input, output) {
     showModal(modalDialog(
       title = "Agility Info",
       div(
-        "Agility determines the likelihood that you successfully dodge an attack. Starting out, you're clumsier than a drunk, but with lots of training, you can grow to become proficient and, eventually, quite skilled."
+        "Agility determines the likelihood that you successfully dodge an attack. Starting out, you're clumsier than a drunk, but with lots of training, you can grow to become proficient and, eventually, quite skilled... maybe even a ninja."
       ),
       footer = actionButton("button3","",icon = icon("thumbs-up"))
     ))
@@ -409,7 +413,7 @@ server <- function(input, output) {
     showModal(modalDialog(
       title = "Stealth Info",
       div(
-        "Stealth determines the strength of and likelihood that you can successfully launch an ambush or a sneaky first-strike. The first bird may get the worm, but the second mouse gets the cheese. Sometimes it's better to stay in hiding until the action is over."
+        "Stealth determines the strength of and likelihood that you can successfully launch an ambush or a sneaky first-strike. The first bird may get the worm, but the second mouse gets the cheese. Sometimes it's better to stay in hiding until the action is over and scavenge what you can from the less-fortunate \"heroes\"."
       ),
       footer = actionButton("button4","",icon = icon("thumbs-up"))
     ))
@@ -418,7 +422,7 @@ server <- function(input, output) {
     showModal(modalDialog(
       title = "Speed Info",
       div(
-        "Speed determines how fast you can move while exploring the lands of Farthingham."
+        "Speed determines how fast you can move while exploring the lands of Farthingham. Speed's kinda boring. Useful, but boring."
       ),
       footer = actionButton("button5","",icon = icon("thumbs-up"))
     ))
@@ -465,6 +469,24 @@ server <- function(input, output) {
   observeEvent(input$button7,{
     removeModal()
   })
+  observe(
+  if (sum(input$obs1, input$obs2, input$obs3, input$obs4, input$obs5, input$obs6, input$obs7) == 25){
+    output$characterdescription <- renderUI({
+      h2("things happened")
+    })
+  } else {
+    output$characterdescription <- NULL
+  }
+  )
+  
+  
+  
+  
+  
+  
+  
+  
+  
 }
 
 shinyApp(ui, server)
